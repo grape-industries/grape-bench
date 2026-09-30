@@ -1,0 +1,970 @@
+{
+  "corpus": "gujarati",
+  "provider": "claude",
+  "model": "haiku",
+  "cost_basis": "Claude API list price reported by the claude CLI (haiku, thinking off), grape server rerank + gate, 5 passages",
+  "embed": "intfloat/multilingual-e5-large",
+  "meta": {
+    "date": "2026-09-30 16:50",
+    "questions": "questions_gu.json",
+    "embed_key": "e5-large",
+    "modes": [
+      "grape",
+      "rag"
+    ],
+    "corpus_files": 12,
+    "corpus_bytes": 465448,
+    "chunks": 202,
+    "settings": {
+      "limit": 8,
+      "snippet": 600,
+      "top_k": 5,
+      "chunk_chars": 1000
+    },
+    "thinking": false,
+    "rerank": null,
+    "gate": false,
+    "server_rerank": true,
+    "server_limit": 5,
+    "judge": true,
+    "grape_version": "0.1.0",
+    "bench_commit": null
+  },
+  "setup_seconds": {
+    "grape": 0.02888448299927404,
+    "grape_update": 0.06695295799909218,
+    "rag": 303.4115133089945
+  },
+  "rows": [
+    {
+      "q": "અમદાવાદ કઈ નદીના કિનારે વસેલું છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "સાબરમતી",
+          "Sabarmati"
+        ]
+      ],
+      "grape": {
+        "answer": "અમદાવાદ **સાબરમતી નદીના કિનારે** વસેલું છે. આ શહેર સાબરમતી નદીના કિનારે સ્થિત છે અને તે ગુજરાત રાજ્યનું સૌથી મોટું શહેર છે.",
+        "in": 1451,
+        "out": 102,
+        "cost": 0.001961,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 4.78,
+        "api_seconds": 3.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "અમદાવાદ **સાબરમતી નદીના કિનારે** વસેલું છે. આ શહેર સાબરમતી નદીના કિનારે સ્થિત છે અને તે સમુદ્રની સપાટીથી ૫૩ મીટરની ઊંચાઈએ આવેલું છે.",
+        "in": 4000,
+        "out": 115,
+        "cost": 0.004575,
+        "calls": 1,
+        "seconds": 5.19,
+        "api_seconds": 3.25,
+        "correct": true
+      }
+    },
+    {
+      "q": "અમદાવાદ કયા વર્ષથી કયા વર્ષ સુધી ગુજરાતનું પાટનગર રહ્યું?",
+      "type": "number",
+      "expect": [
+        [
+          "૧૯૬૦",
+          "1960"
+        ],
+        [
+          "૧૯૭૧",
+          "1971"
+        ]
+      ],
+      "grape": {
+        "answer": "અમદાવાદ ૧૯૬૦થી ૧૯૭૧ સુધી ગુજરાત રાજ્યનું પાટનગર રહ્યું હતું.",
+        "in": 1759,
+        "out": 67,
+        "cost": 0.002094,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.62,
+        "seconds": 3.67,
+        "api_seconds": 1.85,
+        "correct": true
+      },
+      "rag": {
+        "answer": "અમદાવાદ **૧૯૬૦થી ૧૯૭૧ સુધી** ગુજરાતનું પાટનગર રહી ચૂક્યું છે.",
+        "in": 4448,
+        "out": 66,
+        "cost": 0.0007775,
+        "calls": 1,
+        "seconds": 3.97,
+        "api_seconds": 2.12,
+        "correct": true
+      }
+    },
+    {
+      "q": "કાપડ ઉદ્યોગને કારણે અમદાવાદને કયું ઉપનામ મળ્યું હતું?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "માન્ચેસ્ટર",
+          "માંચેસ્ટર",
+          "Manchester"
+        ]
+      ],
+      "grape": {
+        "answer": "કાપડ ઉદ્યોગને કારણે અમદાવાદને **'પૂર્વનું માંચેસ્ટર'** અથવા **'માન્ચેસ્ટર ઑફ ધ ઈસ્ટ'** ઉપનામ મળ્યું હતું. અહીં સ્થપાયેલા ટેક્સ્ટાઈલ ઉદ્યોગ અને કાપડની મિલોને કારણે તેને આ ઉપનામથી ઓળખવામાં આવતું હતું.",
+        "in": 1762,
+        "out": 191,
+        "cost": 0.002717,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.5,
+        "seconds": 5.13,
+        "api_seconds": 3.28,
+        "correct": true
+      },
+      "rag": {
+        "answer": "કાપડ ઉદ્યોગને કારણે અમદાવાદને **'માન્ચેસ્ટર ઑફ ધ ઈસ્ટ'** અને **'પૂર્વનું માંચેસ્ટર'** તરીકે ઓળખવામાં આવતું હતું.",
+        "in": 4442,
+        "out": 109,
+        "cost": 0.0009919,
+        "calls": 1,
+        "seconds": 4.73,
+        "api_seconds": 2.74,
+        "correct": true
+      }
+    },
+    {
+      "q": "ઉત્તરાયણનો પ્રારંભ કઈ તારીખે થાય છે?",
+      "type": "number",
+      "expect": [
+        [
+          "૨૧",
+          "21",
+          "૨૨",
+          "22"
+        ],
+        [
+          "ડિસેમ્બર",
+          "ડીસેમ્બર",
+          "December"
+        ]
+      ],
+      "grape": {
+        "answer": "ઉત્તરાયણનો પ્રારંભ ૨૧ થી ૨૨ ડીસેમ્બર થી થાય છે.",
+        "in": 1893,
+        "out": 55,
+        "cost": 0.002168,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.6,
+        "seconds": 3.6,
+        "api_seconds": 1.66,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ઉત્તરાયણનો પ્રારંભ **૨૧ થી ૨૨ ડીસેમ્બર**ને થાય છે, જ્યારે સૂર્ય ઉત્તર તરફ ખસવાનું શરૂ કરે છે.",
+        "in": 3175,
+        "out": 98,
+        "cost": 0.003665,
+        "calls": 1,
+        "seconds": 4.34,
+        "api_seconds": 2.49,
+        "correct": true
+      }
+    },
+    {
+      "q": "કચ્છનું રણ કેટલા ચોરસ કિલોમીટર વિસ્તારમાં ફેલાયેલું છે?",
+      "type": "number",
+      "expect": [
+        [
+          "26,000",
+          "૨૬,૦૦૦",
+          "26000",
+          "૨૬૦૦૦"
+        ]
+      ],
+      "grape": {
+        "answer": "Not in the documents.\n\nઆપેલ અવતરણોમાં કચ્છનું રણ કેટલા ચોરસ કિલોમીટર વિસ્તારમાં ફેલાયેલું છે તેનો ચોક્કસ આંક આપેલો નથી, માત્ર તે \"વિશાળ ક્ષેત્ર\" તરીકે વર્ણવવામાં આવ્યો છે.",
+        "in": 3325,
+        "out": 222,
+        "cost": 0.004435,
+        "calls": 3,
+        "route": "route-search+again",
+        "coverage": 0.43,
+        "searched": [
+          [
+            "કચ્છનું રણ વિસ્તાર ચોરસ કિલોમીટર"
+          ],
+          [
+            "કચ્છનું રણ વિસ્તાર ચોરસ કિલોમીટર",
+            "કચ્છનું રણ ચોરસ કિલોમીટર વિસ્તાર"
+          ]
+        ],
+        "seconds": 13.16,
+        "api_seconds": 6.26,
+        "correct": false
+      },
+      "rag": {
+        "answer": "કચ્છનું રણ **26,000 square kilometers (ચોરસ કિલોમીટર)** વિસ્તારમાં ફેલાયેલું છે, જે કચ્છના અખાત અને દક્ષિણ પાકિસ્તાનમાં સિંધુના મુખની વચ્ચે આવેલું છે.",
+        "in": 3959,
+        "out": 119,
+        "cost": 0.004554,
+        "calls": 1,
+        "seconds": 5.47,
+        "api_seconds": 3.16,
+        "correct": true
+      }
+    },
+    {
+      "q": "કચ્છનું રણ કયા મોટા રણનો એક ભાગ છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "થર",
+          "Thar"
+        ]
+      ],
+      "grape": {
+        "answer": "કચ્છનું રણ થરના રણનો એક ભાગ છે, જે ગુજરાતના કચ્છ અને પાકિસ્તાનના સિંધમાં ફેલાયેલું એક જૈવિક ભૂક્ષેત્ર છે.",
+        "in": 1914,
+        "out": 99,
+        "cost": 0.0024089999999999997,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.77,
+        "seconds": 4.43,
+        "api_seconds": 2.69,
+        "correct": true
+      },
+      "rag": {
+        "answer": "કચ્છનું રણ **થરના રણનો એક ભાગ છે**, જે ગુજરાતના કચ્છ અને પાકિસ્તાનના સિંધમાં ફેલાયેલું એક જૈવિક ભૂક્ષેત્ર છે.",
+        "in": 3910,
+        "out": 100,
+        "cost": 0.004410000000000001,
+        "calls": 1,
+        "seconds": 4.94,
+        "api_seconds": 2.83,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગરબો શબ્દ કયા સંસ્કૃત શબ્દ પરથી આવ્યો છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "ગર્ભદીપ"
+        ]
+      ],
+      "grape": {
+        "answer": "ગરબો શબ્દ મૂળ સંસ્કૃત શબ્દ **ગર્ભદીપ** પરથી આવેલો છે. આ શબ્દ दीपगर्भो (દીપગર્ભ) થી આગળ घटः / दीपगर्भो / गभो / गरभो / गरबો આ ક્રમે વ્યુત્પન્ન થયો હોવાનું જણાય છે.",
+        "in": 1314,
+        "out": 153,
+        "cost": 0.002079,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.8,
+        "seconds": 5.31,
+        "api_seconds": 3.51,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગરબો શબ્દ મૂળ સંસ્કૃત શબ્દ **ગર્ભદીપ** પરથી આવેલો છે, જેમાં દીપગર્ભો / ગભો / ગરભો / ગરબો આ ક્રમે શબ્દ વ્યુત્પન્ન થયો છે.",
+        "in": 3946,
+        "out": 121,
+        "cost": 0.0045509999999999995,
+        "calls": 1,
+        "seconds": 4.48,
+        "api_seconds": 2.58,
+        "correct": true
+      }
+    },
+    {
+      "q": "સાબરમતી આશ્રમની સ્થાપના કયા વર્ષમાં થઈ હતી?",
+      "type": "number",
+      "expect": [
+        [
+          "૧૯૧૫",
+          "1915"
+        ]
+      ],
+      "grape": {
+        "answer": "સાબરમતી આશ્રમની સ્થાપના ઇ.સ. ૧૯૧૫ના વર્ષમાં અમદાવાદ શહેરના પાલડી વિસ્તારમાં આવેલા કોચરબ આશ્રમ ખાતે મહાત્મા ગાંધીજીએ કરી હતી.",
+        "in": 1345,
+        "out": 126,
+        "cost": 0.001975,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 4.88,
+        "api_seconds": 3.1,
+        "correct": true
+      },
+      "rag": {
+        "answer": "સાબરમતી આશ્રમની સ્થાપના ઇ.સ. ૧૯૧૫ના વર્ષમાં મહાત્મા ગાંધીજીએ કરી હતી, અમદાવાદ શહેરના પાલડી વિસ્તારમાં આવેલા કોચરબ આશ્રમ ખાતે.",
+        "in": 4720,
+        "out": 127,
+        "cost": 0.0011097,
+        "calls": 1,
+        "seconds": 5.28,
+        "api_seconds": 3.41,
+        "correct": true
+      }
+    },
+    {
+      "q": "મીઠાના સત્યાગ્રહ માટે ગાંધીજીએ કૂચ ક્યાંથી શરૂ કરી હતી?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "આશ્રમ",
+          "Ashram"
+        ]
+      ],
+      "grape": {
+        "answer": "મીઠાના સત્યાગ્રહ માટે ગાંધીજીએ **ગાંધી આશ્રમ**થી દાંડી કૂચની શરૂઆત કરી હતી.",
+        "in": 1168,
+        "out": 73,
+        "cost": 0.001533,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.74,
+        "seconds": 3.91,
+        "api_seconds": 2.11,
+        "correct": true
+      },
+      "rag": {
+        "answer": "મીઠાના સત્યાગ્રહ માટે ગાંધીજીએ **સાબરમતીથી** કૂચ શરૂ કરી હતી. આ કાર્યક્રમ મુજબ ૨૧ માર્ચે સાબરમતીથી કૂચ આરંભીને ૬ એપ્રિલ ૧૯૩૦ના રોજ ગાંધી દાંડી પહોંચ્યા.",
+        "in": 8085,
+        "out": 158,
+        "cost": 0.0016012,
+        "calls": 1,
+        "seconds": 5.73,
+        "api_seconds": 3.86,
+        "correct": true,
+        "judge_cost": 0.0010170000000000001,
+        "judged": true
+      }
+    },
+    {
+      "q": "ગિરનારના પાંચ પર્વતો પર કુલ કેટલા મંદિરો આવેલા છે?",
+      "type": "number",
+      "expect": [
+        [
+          "૮૬૬",
+          "866"
+        ]
+      ],
+      "grape": {
+        "answer": "ગિરનારના પાંચ પર્વતો પર કુલ થઇને **૮૬૬ મંદિરો** આવેલા છે.",
+        "in": 1172,
+        "out": 54,
+        "cost": 0.0014420000000000001,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.41,
+        "api_seconds": 1.61,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગિરનારના પાંચ પર્વતો પર કુલ થઇને **૮૬૬ મંદિરો** આવેલા છે.",
+        "in": 3760,
+        "out": 54,
+        "cost": 0.00403,
+        "calls": 1,
+        "seconds": 3.62,
+        "api_seconds": 1.77,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગિરનારનું સૌથી ઊંચું શિખર કયું છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "ગોરખ",
+          "Gorakh"
+        ]
+      ],
+      "grape": {
+        "answer": "ગિરનારનું સૌથી ઊંચું શિખર **ગોરખ શિખર** છે, જેની ઉંચાઈ **૩૬૦૦ ફુટ** છે. આ શિખરને ગોરખટુંક પણ કહેવામાં આવે છે અને તે ગુજરાત રાજયનાં સૌથી ઉંચા સ્થળો માટે ગણાય છે.",
+        "in": 1840,
+        "out": 149,
+        "cost": 0.002585,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.51,
+        "seconds": 5.41,
+        "api_seconds": 3.65,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગિરનારનું સૌથી ઊંચું શિખર **ગોરખ શિખર** છે, જે **૩૬૦૦ ફુટ** ની ઉંચાઈ ધરાવે છે.",
+        "in": 3839,
+        "out": 79,
+        "cost": 0.004234,
+        "calls": 1,
+        "seconds": 3.96,
+        "api_seconds": 2.11,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગીર રાષ્ટ્રીય ઉદ્યાનની સ્થાપના કયા વર્ષમાં થઈ હતી?",
+      "type": "number",
+      "expect": [
+        [
+          "૧૯૬૫",
+          "1965"
+        ]
+      ],
+      "grape": {
+        "answer": "ગીર રાષ્ટ્રીય ઉદ્યાનની સ્થાપના **૧૯૬૫માં** કરવામાં આવી હતી.",
+        "in": 2025,
+        "out": 61,
+        "cost": 0.00233,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.87,
+        "seconds": 3.22,
+        "api_seconds": 1.45,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગીર રાષ્ટ્રીય ઉદ્યાનની સ્થાપના **૧૯૬૫માં** થઈ હતી. આ જાણકારી દોરૂ પુરોવણીમાં સ્પષ્ટ નોંધાયેલી છે.",
+        "in": 4249,
+        "out": 102,
+        "cost": 0.0009376,
+        "calls": 1,
+        "seconds": 4.48,
+        "api_seconds": 2.67,
+        "correct": true
+      }
+    },
+    {
+      "q": "એપ્રિલ ૨૦૧૦ની વસ્તી ગણતરી મુજબ ગીરમાં કેટલા સિંહ હતા?",
+      "type": "number",
+      "expect": [
+        [
+          "૪૧૧",
+          "411"
+        ]
+      ],
+      "grape": {
+        "answer": "એપ્રિલ ૨૦૧૦ની વસ્તી ગણતરી મુજબ ગીરમાં ૪૧૧ સિંહ હતા.",
+        "in": 1242,
+        "out": 63,
+        "cost": 0.001557,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.53,
+        "api_seconds": 1.68,
+        "correct": true
+      },
+      "rag": {
+        "answer": "એપ્રિલ ૨૦૧૦ની વસ્તી ગણતરી મુજબ ગીરમાં **૪૧૧ સિંહ** નોંધાયા હતા, જે ૨૦૦૫ની સરખામણીએ ૫૨નો વધારો સૂચવે છે।",
+        "in": 4418,
+        "out": 112,
+        "cost": 0.0010045,
+        "calls": 1,
+        "seconds": 4.8,
+        "api_seconds": 2.9,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગુજરાતનું પાટનગર કયું છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "ગાંધીનગર",
+          "Gandhinagar"
+        ]
+      ],
+      "grape": {
+        "answer": "ગુજરાતનું પાટનગર ગાંધીનગર છે. અમદાવાદ ગુજરાતનું સૌથી મોટું નગર છે, પરંતુ તે ૧૯૬૦ થી ૧૯૭૧ સુધી પાટનગર હતું.",
+        "in": 1750,
+        "out": 106,
+        "cost": 0.00228,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 4.71,
+        "api_seconds": 2.75,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગુજરાતનું પાટનગર **ગાંધીનગર** છે, જયારે તેનું સૌથી મોટું નગર અમદાવાદ છે.",
+        "in": 4247,
+        "out": 63,
+        "cost": 0.0007424,
+        "calls": 1,
+        "seconds": 3.84,
+        "api_seconds": 2.0,
+        "correct": true
+      }
+    },
+    {
+      "q": "નર્મદા નદીની લંબાઈ કેટલી છે?",
+      "type": "number",
+      "expect": [
+        [
+          "૧૩૧૨",
+          "1312",
+          "1,312"
+        ]
+      ],
+      "grape": {
+        "answer": "નર્મદા નદીની લંબાઈ ૧૩૧૨ કી.મી. છે.",
+        "in": 1384,
+        "out": 39,
+        "cost": 0.001579,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.22,
+        "api_seconds": 1.32,
+        "correct": true
+      },
+      "rag": {
+        "answer": "નર્મદા નદીની લંબાઈ **૧૩૧૨ કી.મી. (કિલોમીટર)** છે.",
+        "in": 4074,
+        "out": 50,
+        "cost": 0.004324000000000001,
+        "calls": 1,
+        "seconds": 3.58,
+        "api_seconds": 1.76,
+        "correct": true
+      }
+    },
+    {
+      "q": "નર્મદા નદીનું મૂળ કયા પર્વતમાં આવેલું છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "અમરકંટક",
+          "Amarkantak"
+        ]
+      ],
+      "grape": {
+        "answer": "નર્મદા નદીનું મૂળ મધ્ય પ્રદેશ રાજ્યના અમરકંટક પર્વતમાં આવેલું છે.",
+        "in": 1389,
+        "out": 63,
+        "cost": 0.001704,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.7,
+        "api_seconds": 1.91,
+        "correct": true
+      },
+      "rag": {
+        "answer": "નર્મદા નદીનું મૂળ મધ્ય પ્રદેશ રાજ્યના **અમરકંટક પર્વતમાં** આવેલું છે।",
+        "in": 4084,
+        "out": 65,
+        "cost": 0.004409,
+        "calls": 1,
+        "seconds": 3.94,
+        "api_seconds": 2.14,
+        "correct": true
+      }
+    },
+    {
+      "q": "મહાત્મા ગાંધીનો જન્મ કયા વર્ષમાં થયો હતો?",
+      "type": "number",
+      "expect": [
+        [
+          "૧૮૬૯",
+          "1869"
+        ]
+      ],
+      "grape": {
+        "answer": "મહાત્મા ગાંધીનો જન્મ વર્ષ આપેલા અંશોમાં સીધી રીતે નોંધાયેલો નથી, પરંતુ પ્રથમ અંશમાં જણાવ્યું છે કે તેમણે જૂન ૧૮૯૧માં ૨૨ વર્ષની વયે બારિસ્ટર તરીકે નિયુક્તિ પાઈ હતી, જેમાંથી અનુમાન કરી શકાય છે કે તેમનો જન્મ આશરે ૧૮૬૯માં થયો હોવો જોઈએ.",
+        "in": 4132,
+        "out": 575,
+        "cost": 0.007007,
+        "calls": 3,
+        "route": "answer-search+again",
+        "coverage": 1.0,
+        "searched": [
+          [
+            "મહાત્મા ગાંધીનો જન્મ કયા વર્ષમાં થયો હતો?",
+            "મહાત્મા ગાંધી જન્મ વર્ષ"
+          ],
+          [
+            "મહાત્મા ગાંધીનો જન્મ કયા વર્ષમાં થયો હતો?",
+            "મહાત્મા ગાંધી જન્મ વર્ષ",
+            "મહાત્મા ગાંધી જન્મ વર્ષ તારીખ"
+          ]
+        ],
+        "seconds": 18.67,
+        "api_seconds": 14.02,
+        "correct": true
+      },
+      "rag": {
+        "answer": "મહાત્મા ગાંધીનો જન્મ **૧૮૬૯** વર્ષમાં થયો હતો, તેમજ તેમણે **ઓક્ટોબર ૨, ૧૮૬૯** ના રોજ પોરબંદરમાં જન્મ લીધો હતો.",
+        "in": 4035,
+        "out": 112,
+        "cost": 0.004595,
+        "calls": 1,
+        "seconds": 4.96,
+        "api_seconds": 3.23,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગાંધીજીએ વકીલાતનું શિક્ષણ લંડનની કઈ સંસ્થામાં લીધું હતું?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "ઇનર ટેમ્પલ",
+          "Inner Temple"
+        ]
+      ],
+      "grape": {
+        "answer": "Not in the documents.\n\nઆપેલ અંશોમાં ગાંધીજીએ લંડનમાં વકીલાતનું શિક્ષણ કઈ સંસ્થામાં લીધું તે વિશે માહિતી નથી.",
+        "in": 4644,
+        "out": 179,
+        "cost": 0.005539,
+        "calls": 3,
+        "route": "answer-search+again",
+        "coverage": 0.67,
+        "searched": [
+          [
+            "ગાંધીજીએ વકીલાતનું શિક્ષણ લંડનની કઈ સંસ્થામાં લીધું હતું?",
+            "ગાંધીજી લંડન વકીલાતનું શિક્ષણ સંસ્થા ઇનર્સ બાર કોર્ટ"
+          ],
+          [
+            "ગાંધીજીએ વકીલાતનું શિક્ષણ લંડનની કઈ સંસ્થામાં લીધું હતું?",
+            "ગાંધીજી લંડન વકીલાતનું શિક્ષણ સંસ્થા ઇનર્સ બાર કોર્ટ",
+            "ગાંધીજી વકીલાતનું શિક્ષણ લંડન"
+          ]
+        ],
+        "seconds": 11.27,
+        "api_seconds": 5.52,
+        "correct": false
+      },
+      "rag": {
+        "answer": "ગાંધીજીએ વકીલાતનું શિક્ષણ લંડનના **ઇનર ટેમ્પલ**માં લીધું હતું, જ્યાં તેમણે બેરિસ્ટર બનવાના ઇરાદાથી ઇન્સ ઑફ કોર્ટ સ્કૂલ ઓફ લોમાં પ્રવેશ મેળવ્યો હતો અને જૂન ૧૮૯૧માં ૨૨ વર્ષની વયે બારિસ્ટર તરીકે નિયુક્ત થયા હતા.",
+        "in": 3500,
+        "out": 214,
+        "cost": 0.00457,
+        "calls": 1,
+        "seconds": 6.73,
+        "api_seconds": 5.12,
+        "correct": true
+      }
+    },
+    {
+      "q": "દૃઢ મનોબળને કારણે સરદાર પટેલને કયા નામથી ઓળખવામાં આવે છે?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "લોખંડી",
+          "Iron"
+        ]
+      ],
+      "grape": {
+        "answer": "વલ્લભભાઈ પટેલને તેમના દૃઢ મનોબળને કારણે **લોખંડી પુરુષ** તરીકે ઓળખવામાં આવે છે. આ ઉપરાંત, તેઓ **સરદાર** નામથી પણ ભારત અને દુનિયાભરમાં સંબોધાય છે.",
+        "in": 1155,
+        "out": 130,
+        "cost": 0.001805,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.8,
+        "seconds": 5.2,
+        "api_seconds": 3.38,
+        "correct": true
+      },
+      "rag": {
+        "answer": "સરદાર પટેલને તેમના દૃઢ મનોબળને કારણે **લોખંડી પુરુષ** તરીકે ઓળખવામાં આવે છે. આ નામ તેમના શક્તિશાળી અને અડિગ સંકલ્પને પ્રતિબિંબિત કરે છે.",
+        "in": 4983,
+        "out": 118,
+        "cost": 0.001091,
+        "calls": 1,
+        "seconds": 5.22,
+        "api_seconds": 3.25,
+        "correct": true
+      }
+    },
+    {
+      "q": "સરદાર વલ્લભભાઈ પટેલનો ઉછેર કયા ગામમાં થયો હતો?",
+      "type": "fact",
+      "expect": [
+        [
+          "કરમસદ",
+          "Karamsad"
+        ]
+      ],
+      "grape": {
+        "answer": "સરદાર વલ્લભભાઈ પટેલનો ઉછેર ગુજરાતના **કરમસદ ગામમાં** થયો હતો.",
+        "in": 1867,
+        "out": 60,
+        "cost": 0.002167,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.79,
+        "api_seconds": 1.94,
+        "correct": true
+      },
+      "rag": {
+        "answer": "સરદાર વલ્લભભાઈ પટેલનો ઉછેર ગુજરાતના **કરમસદ ગામમાં** થયો હતો, જ્યાં તેમના પિતા ઝવેરભાઈની ખેતીવાડી હતી.",
+        "in": 4797,
+        "out": 98,
+        "cost": 0.0009724,
+        "calls": 1,
+        "seconds": 4.7,
+        "api_seconds": 2.76,
+        "correct": true
+      }
+    },
+    {
+      "q": "In which year was the Gir National Park established?",
+      "type": "multilingual",
+      "expect": [
+        [
+          "1965",
+          "૧૯૬૫"
+        ]
+      ],
+      "grape": {
+        "answer": "ગીર રાષ્ટ્રીય ઉદ્યાનની સ્થાપના ૧૯૬૫માં કરવામાં આવી હતી.",
+        "in": 2092,
+        "out": 104,
+        "cost": 0.002612,
+        "calls": 2,
+        "route": "answer-search",
+        "coverage": 0.57,
+        "searched": [
+          [
+            "In which year was the Gir National Park established?",
+            "ગીર રાષ્ટ્રીય ઉદ્યાન સ્થાપના વર્ષ"
+          ]
+        ],
+        "seconds": 6.68,
+        "api_seconds": 3.08,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided are in Gujarati and discuss Gir National Park, but they do not contain information about the specific year it was established. While one excerpt mentions that the forest area was declared \"protected\" by the Nawab of Junagadh from the early 1900s, the actual establishment year of Gir National Park is not stated in these documents.",
+        "in": 4261,
+        "out": 89,
+        "cost": 0.0008738,
+        "calls": 1,
+        "seconds": 3.72,
+        "api_seconds": 1.81,
+        "correct": false
+      }
+    },
+    {
+      "q": "How long is the Narmada river?",
+      "type": "multilingual",
+      "expect": [
+        [
+          "1312",
+          "1,312",
+          "૧૩૧૨"
+        ]
+      ],
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 0,
+        "out": 0,
+        "cost": 0,
+        "calls": 0,
+        "route": "refused",
+        "coverage": 0.0,
+        "seconds": 0.01,
+        "api_seconds": 0.0,
+        "correct": false
+      },
+      "rag": {
+        "answer": "નર્મદા નદીની લંબાઈ ૧૩૧૨ કિલોમીટર છે.",
+        "in": 4059,
+        "out": 41,
+        "cost": 0.004264,
+        "calls": 1,
+        "seconds": 3.37,
+        "api_seconds": 1.53,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the capital of Gujarat?",
+      "type": "multilingual",
+      "expect": [
+        [
+          "Gandhinagar",
+          "ગાંધીનગર"
+        ]
+      ],
+      "grape": {
+        "answer": "ગુજરાતનું પાટનગર (રાજધાની) **ગાંધીનગર** છે, જયારે તેનું સૌથી મોટું નગર અમદાવાદ છે.",
+        "in": 2418,
+        "out": 103,
+        "cost": 0.002933,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.39,
+        "searched": [
+          [
+            "ગુજરાતની રાજધાની શું છે અમદાવાદ"
+          ]
+        ],
+        "seconds": 7.03,
+        "api_seconds": 3.39,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગુજરાતનું પાટનગર (રાજધાની) ગાંધીનગર છે, જયારે તેનું સૌથી મોટું નગર અમદાવાદ છે. ગુજરાતની પહેલી રાજધાની અમદાવાદ હતી, પરંતુ ૧૯૭૦માં રાજધાની ગાંધીનગરમાં ખસેડવામાં આવી હતી.",
+        "in": 3246,
+        "out": 151,
+        "cost": 0.004001,
+        "calls": 1,
+        "seconds": 5.64,
+        "api_seconds": 3.9,
+        "correct": true
+      }
+    },
+    {
+      "q": "આઇફોન કેવી રીતે રીસેટ કરવો?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 641,
+        "out": 5,
+        "cost": 0.0006659999999999999,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.27,
+        "seconds": 2.5,
+        "api_seconds": 0.75,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 1419,
+        "out": 8,
+        "cost": 0.0014589999999999998,
+        "calls": 1,
+        "seconds": 2.71,
+        "api_seconds": 0.75,
+        "correct": true
+      }
+    },
+    {
+      "q": "જાપાનની રાજધાની કઈ છે?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.\n\nઆપેલ અંશોમાં જાપાનની રાજધાની વિશે કોઈ માહિતી નથી. આ સંગ્રહ ગુજરાત અને ભારતના ઐતિહાસિક સ્થાનો વિશે છે.",
+        "in": 1516,
+        "out": 99,
+        "cost": 0.0020109999999999998,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.66,
+        "seconds": 4.45,
+        "api_seconds": 2.69,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nઆપેલ ફોટોકોપીમાં જાપાનની રાજધાની વિશે કોઈ માહિતી નથી. ફોટોકોપીમાં ગુજરાત, અમદાવાદ અને ગાંધીનગર વિશે માહિતી છે.",
+        "in": 4860,
+        "out": 107,
+        "cost": 0.0010237,
+        "calls": 1,
+        "seconds": 4.85,
+        "api_seconds": 3.01,
+        "correct": true
+      }
+    },
+    {
+      "q": "કમ્પ્યુટરમાં પાયથોન કેવી રીતે ઇન્સ્ટોલ કરવું?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 662,
+        "out": 5,
+        "cost": 0.000687,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.21,
+        "seconds": 2.48,
+        "api_seconds": 0.72,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 2722,
+        "out": 8,
+        "cost": 0.002762,
+        "calls": 1,
+        "seconds": 2.57,
+        "api_seconds": 0.72,
+        "correct": true
+      }
+    },
+    {
+      "q": "આવતીકાલે લંડનમાં હવામાન કેવું રહેશે?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 646,
+        "out": 92,
+        "cost": 0.001106,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.22,
+        "seconds": 3.4,
+        "api_seconds": 1.66,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nઆવતીકાલે લંડનમાં હવામાન કેવું રહેશે તે બાબતે આપેલ પાઠ્યાંશોમાં કોઈ માહિતી નથી.",
+        "in": 3962,
+        "out": 78,
+        "cost": 0.004352,
+        "calls": 1,
+        "seconds": 4.32,
+        "api_seconds": 2.41,
+        "correct": true
+      }
+    },
+    {
+      "q": "એક કેળામાં કેટલી કેલરી હોય છે?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 640,
+        "out": 105,
+        "cost": 0.0011650000000000002,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 4.13,
+        "api_seconds": 2.03,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 4638,
+        "out": 8,
+        "cost": 0.0005065,
+        "calls": 1,
+        "seconds": 2.76,
+        "api_seconds": 0.98,
+        "correct": true
+      }
+    }
+  ]
+}

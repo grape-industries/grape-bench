@@ -1,0 +1,900 @@
+{
+  "corpus": "large",
+  "provider": "claude",
+  "model": "haiku",
+  "cost_basis": "Claude API list price reported by the claude CLI (haiku, thinking off), grape server rerank + gate, 5 passages",
+  "embed": "BAAI/bge-small-en-v1.5",
+  "meta": {
+    "date": "2026-09-30 17:04",
+    "questions": "questions_large.json",
+    "embed_key": "bge-small",
+    "modes": [
+      "grape",
+      "rag"
+    ],
+    "corpus_files": 300,
+    "corpus_bytes": 18379509,
+    "chunks": 22672,
+    "settings": {
+      "limit": 8,
+      "snippet": 600,
+      "top_k": 5,
+      "chunk_chars": 1000
+    },
+    "thinking": false,
+    "rerank": null,
+    "gate": false,
+    "server_rerank": true,
+    "server_limit": 5,
+    "judge": true,
+    "grape_version": "0.1.0",
+    "bench_commit": null
+  },
+  "setup_seconds": {
+    "grape": 1.1422215059992595,
+    "grape_update": 1.0639313510000648,
+    "rag": 2778.2464952149894
+  },
+  "rows": [
+    {
+      "q": "Which river is the German town of Aalen situated on?",
+      "type": "fact",
+      "expect": [
+        "Kocher"
+      ],
+      "grape": {
+        "answer": "Aalen is situated on the upper reaches of the river Kocher, which enters the town's territory from the south and crosses through the town centre before leaving for Hüttlingen.",
+        "in": 1422,
+        "out": 43,
+        "cost": 0.001637,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.76,
+        "seconds": 3.31,
+        "api_seconds": 1.01,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Aalen is situated on the upper reaches of the river **Kocher**.",
+        "in": 1726,
+        "out": 20,
+        "cost": 0.0018260000000000001,
+        "calls": 1,
+        "seconds": 2.7,
+        "api_seconds": 0.9,
+        "correct": true
+      }
+    },
+    {
+      "q": "What was the Acorn Electron nicknamed inside Acorn?",
+      "type": "fact",
+      "expect": [
+        "Elk"
+      ],
+      "grape": {
+        "answer": "The Acorn Electron was nicknamed the **\"Elk\"** inside Acorn. According to the excerpts, this nickname was reported publicly for perhaps the first time when the machine was launched at the Acorn User Exhibition in August 1983.",
+        "in": 1464,
+        "out": 57,
+        "cost": 0.0017490000000000001,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.41,
+        "api_seconds": 1.15,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Acorn Electron was nicknamed the **Elk** inside Acorn and beyond.",
+        "in": 1327,
+        "out": 23,
+        "cost": 0.0014420000000000001,
+        "calls": 1,
+        "seconds": 2.71,
+        "api_seconds": 0.86,
+        "correct": true
+      }
+    },
+    {
+      "q": "What was the launch price of the Acorn Electron?",
+      "type": "number",
+      "expect": [
+        "199"
+      ],
+      "grape": {
+        "answer": "The launch price of the Acorn Electron was £199, as stated when it was introduced on 25 August 1983.",
+        "in": 1513,
+        "out": 32,
+        "cost": 0.001673,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.02,
+        "api_seconds": 0.95,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The launch price of the Acorn Electron was £199, as stated when it was introduced on 25 August 1983.",
+        "in": 1346,
+        "out": 32,
+        "cost": 0.001506,
+        "calls": 1,
+        "seconds": 2.84,
+        "api_seconds": 0.96,
+        "correct": true
+      }
+    },
+    {
+      "q": "How many times did the Apollo 8 crew orbit the Moon?",
+      "type": "number",
+      "expect": [
+        [
+          "ten",
+          "10"
+        ]
+      ],
+      "grape": {
+        "answer": "According to the excerpts, the Apollo 8 crew orbited the Moon **ten times** over the course of twenty hours before departing safely back to Earth.",
+        "in": 1472,
+        "out": 37,
+        "cost": 0.001657,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.94,
+        "seconds": 3.35,
+        "api_seconds": 0.99,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Apollo 8 crew orbited the Moon **ten times**. According to the excerpts, \"The crew orbited the Moon ten times without landing\" and they completed \"ten lunar orbits in 20 hours\" during their mission in December 1968.",
+        "in": 1363,
+        "out": 59,
+        "cost": 0.0016580000000000002,
+        "calls": 1,
+        "seconds": 2.88,
+        "api_seconds": 1.16,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who were the three astronauts of Apollo 8?",
+      "type": "fact",
+      "expect": [
+        "Borman",
+        "Lovell",
+        "Anders"
+      ],
+      "grape": {
+        "answer": "The three astronauts of Apollo 8 were Frank Borman, James Lovell, and William Anders, who were the first humans to witness and photograph the far side of the Moon and an Earthrise.",
+        "in": 1294,
+        "out": 49,
+        "cost": 0.001539,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 4.12,
+        "api_seconds": 1.73,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The three astronauts of Apollo 8 were **Frank Borman, James Lovell, and William Anders**. They were the first humans to witness and photograph the far side of the Moon and an Earthrise.",
+        "in": 1363,
+        "out": 51,
+        "cost": 0.001618,
+        "calls": 1,
+        "seconds": 3.04,
+        "api_seconds": 1.18,
+        "correct": true
+      }
+    },
+    {
+      "q": "In what year did the Boeing 767 prototype first fly?",
+      "type": "number",
+      "expect": [
+        "1981"
+      ],
+      "grape": {
+        "answer": "The Boeing 767 prototype first flew in **1981**. According to the excerpts, the prototype took its maiden flight on September 26, 1981, under the command of company test pilots Tommy Edmonds, Lew Wallick, and John Brit.",
+        "in": 1439,
+        "out": 62,
+        "cost": 0.001749,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.81,
+        "seconds": 3.39,
+        "api_seconds": 1.14,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Boeing 767 prototype first flew in **1981**. According to the excerpts, \"the prototype first flew on September 26, 1981.\"",
+        "in": 1508,
+        "out": 37,
+        "cost": 0.001693,
+        "calls": 1,
+        "seconds": 2.86,
+        "api_seconds": 1.12,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which Boeing airliner was the company's first wide-body jet with only two engines?",
+      "type": "paraphrase",
+      "expect": [
+        "767"
+      ],
+      "grape": {
+        "answer": "The Boeing 767 was the company's first wide-body jet with only two engines, as described in the excerpts: \"The 767 is Boeing's first wide-body twinjet, powered by General Electric CF6, Rolls-Royce RB211, or Pratt & Whitney JT9D turbofans.\"",
+        "in": 1295,
+        "out": 76,
+        "cost": 0.0016749999999999998,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.86,
+        "seconds": 3.66,
+        "api_seconds": 1.25,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Based on the excerpts, the **Boeing 767** was Boeing's first wide-body jet with only two engines. The document states: \"The 767 is Boeing's first wide-body twinjet, powered by General Electric CF6, Rolls-Royce RB211, or Pratt & Whitney JT9D turbofans.\"",
+        "in": 1658,
+        "out": 79,
+        "cost": 0.002053,
+        "calls": 1,
+        "seconds": 3.29,
+        "api_seconds": 1.34,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the official estimate of the Ainu population of Japan?",
+      "type": "number",
+      "expect": [
+        [
+          "25,000",
+          "25000"
+        ]
+      ],
+      "grape": {
+        "answer": "According to the excerpts, the official estimate of the Ainu population of Japan is 25,000. However, unofficial estimates place the total population at 200,000 or higher, as many individuals of Ainu descent have assimilated into Japanese society and lack knowledge of their ancestry.",
+        "in": 1227,
+        "out": 65,
+        "cost": 0.001552,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.5,
+        "api_seconds": 1.13,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, the official estimate of the Ainu population of Japan is 25,000. However, the excerpts also note that there is no Ainu category in the Japanese national census, and unofficial estimates place the total population at 200,000 or higher due to near-total assimilation into Japanese society.",
+        "in": 1409,
+        "out": 74,
+        "cost": 0.0017790000000000002,
+        "calls": 1,
+        "seconds": 3.08,
+        "api_seconds": 1.28,
+        "correct": true
+      }
+    },
+    {
+      "q": "In which Mexican state is Acapulco?",
+      "type": "fact",
+      "expect": [
+        "Guerrero"
+      ],
+      "grape": {
+        "answer": "Acapulco is located in the state of **Guerrero** on the Pacific Coast of Mexico, as stated in the first excerpt: \"Acapulco de Juárez is a city and major seaport in the state of Guerrero on the Pacific Coast of Mexico.\"",
+        "in": 1571,
+        "out": 66,
+        "cost": 0.001901,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.68,
+        "api_seconds": 1.39,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Acapulco is located in the state of **Guerrero**, Mexico, on the Pacific Coast.",
+        "in": 1367,
+        "out": 26,
+        "cost": 0.0014969999999999998,
+        "calls": 1,
+        "seconds": 2.89,
+        "api_seconds": 0.86,
+        "correct": true
+      }
+    },
+    {
+      "q": "How many KNVB Cups has AFC Ajax won?",
+      "type": "number",
+      "expect": [
+        [
+          "20",
+          "twenty"
+        ]
+      ],
+      "grape": {
+        "answer": "According to the excerpts, AFC Ajax has won **20 KNVB Cups**. This is stated in the first excerpt which notes that Ajax is \"the most successful club in the Netherlands, with 36 [championships] and 20 KNVB Cups.\"",
+        "in": 1545,
+        "out": 63,
+        "cost": 0.0018599999999999999,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.96,
+        "seconds": 3.46,
+        "api_seconds": 1.17,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, AFC Ajax has won 20 KNVB Cups, making them the most successful club in the Netherlands with this trophy.",
+        "in": 1273,
+        "out": 36,
+        "cost": 0.001453,
+        "calls": 1,
+        "seconds": 2.78,
+        "api_seconds": 0.97,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who was the city of Ann Arbor named after?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "wives",
+          "wife"
+        ]
+      ],
+      "grape": {
+        "answer": "Ann Arbor was named after the wives of the village's founders, both named Ann, and the stands of bur oak trees they found at the site of the town.",
+        "in": 1391,
+        "out": 39,
+        "cost": 0.0015860000000000002,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.11,
+        "api_seconds": 0.89,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Ann Arbor was named after the wives of the village's founders John Allen and Elisha Walker Rumsey, both of whom were named Ann, and for the stands of bur oak trees found at the site.",
+        "in": 1452,
+        "out": 49,
+        "cost": 0.001697,
+        "calls": 1,
+        "seconds": 3.1,
+        "api_seconds": 1.05,
+        "correct": true
+      }
+    },
+    {
+      "q": "What population did the 2020 census record for Ann Arbor?",
+      "type": "number",
+      "expect": [
+        [
+          "123,851",
+          "123851"
+        ]
+      ],
+      "grape": {
+        "answer": "According to the 2020 census, Ann Arbor recorded a population of 123,851, making it the fifth-largest city in Michigan.",
+        "in": 1375,
+        "out": 35,
+        "cost": 0.00155,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.4,
+        "api_seconds": 0.93,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, the 2020 U.S. Census recorded Ann Arbor's population as 123,851, making it the fifth-largest city in Michigan.",
+        "in": 1511,
+        "out": 42,
+        "cost": 0.0017209999999999999,
+        "calls": 1,
+        "seconds": 2.88,
+        "api_seconds": 0.98,
+        "correct": true
+      }
+    },
+    {
+      "q": "In what year was Antoine Lavoisier guillotined?",
+      "type": "number",
+      "expect": [
+        "1794"
+      ],
+      "grape": {
+        "answer": "Antoine Lavoisier was guillotined in 1794. According to the excerpts, he was convicted and guillotined on 8 May 1794 in Paris at the age of 50.",
+        "in": 1354,
+        "out": 48,
+        "cost": 0.001594,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.96,
+        "seconds": 3.36,
+        "api_seconds": 1.01,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Antoine Lavoisier was guillotined in 1794. According to the excerpts, he was convicted and guillotined on 8 May 1794 in Paris, at the age of 50.",
+        "in": 1158,
+        "out": 49,
+        "cost": 0.001403,
+        "calls": 1,
+        "seconds": 2.86,
+        "api_seconds": 1.02,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which element did Lavoisier predict would exist, in 1787?",
+      "type": "fact",
+      "expect": [
+        "silicon"
+      ],
+      "grape": {
+        "answer": "Based on the excerpts provided, Lavoisier predicted the existence of **silicon** in 1787. The first excerpt states: \"He predicted the existence of silicon (1787).\"",
+        "in": 1470,
+        "out": 43,
+        "cost": 0.0016849999999999999,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.65,
+        "seconds": 3.07,
+        "api_seconds": 0.92,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Based on the excerpts provided, Lavoisier predicted the existence of **silicon in 1787**. The excerpt states: \"He predicted the existence of silicon (1787) and discovered that, although matter may change its form or shape, its mass always remains the same.\"",
+        "in": 1540,
+        "out": 61,
+        "cost": 0.0018449999999999999,
+        "calls": 1,
+        "seconds": 2.96,
+        "api_seconds": 1.12,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who developed the process that makes ammonia from nitrogen in the air?",
+      "type": "fact",
+      "expect": [
+        "Haber",
+        "Bosch"
+      ],
+      "grape": {
+        "answer": "Fritz Haber and Carl Bosch developed the Haber–Bosch process in 1909 (patented in 1910) to produce ammonia from nitrogen in the air.",
+        "in": 1286,
+        "out": 45,
+        "cost": 0.001511,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.87,
+        "seconds": 3.28,
+        "api_seconds": 1.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Haber–Bosch process to produce ammonia from nitrogen in the air was developed by **Fritz Haber and Carl Bosch in 1909** and patented in 1910.",
+        "in": 1517,
+        "out": 47,
+        "cost": 0.0017519999999999999,
+        "calls": 1,
+        "seconds": 2.85,
+        "api_seconds": 1.09,
+        "correct": true
+      }
+    },
+    {
+      "q": "What share of industrially produced ammonia goes into fertilisers?",
+      "type": "number",
+      "expect": [
+        "70"
+      ],
+      "grape": {
+        "answer": "According to the excerpts, around 70% of industrially produced ammonia is used to make fertilisers in various forms and composition, such as urea and diammonium phosphate.",
+        "in": 1262,
+        "out": 43,
+        "cost": 0.001477,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.74,
+        "seconds": 3.18,
+        "api_seconds": 1.05,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, approximately **70% of industrially produced ammonia is used to make fertilisers** in various forms and composition, such as urea and diammonium phosphate, with ammonia also being applied directly into the soil.",
+        "in": 1269,
+        "out": 55,
+        "cost": 0.001544,
+        "calls": 1,
+        "seconds": 2.92,
+        "api_seconds": 1.13,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the capital of Brunei?",
+      "type": "fact",
+      "expect": [
+        "Bandar Seri Begawan"
+      ],
+      "grape": {
+        "answer": "The capital of Brunei is Bandar Seri Begawan, which is the country's largest city and home to approximately 100,000 of the nation's 460,345 residents.",
+        "in": 1675,
+        "out": 47,
+        "cost": 0.00191,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.22,
+        "api_seconds": 0.95,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The capital of Brunei is Bandar Seri Begawan, which is located in the Brunei-Muara District and is home to approximately 100,000-150,000 residents, making it the country's largest city.",
+        "in": 1406,
+        "out": 57,
+        "cost": 0.0016909999999999998,
+        "calls": 1,
+        "seconds": 2.91,
+        "api_seconds": 1.17,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the name of the animal boundary Alfred Russel Wallace found in the Malay Archipelago?",
+      "type": "paraphrase",
+      "expect": [
+        "Wallace Line"
+      ],
+      "grape": {
+        "answer": "The animal boundary Alfred Russel Wallace found in the Malay Archipelago is called the **Wallace Line**. It is a faunal boundary that runs through the strait between Bali and Lombok, separating the Indonesian archipelago into two distinct parts: a western portion with animals of Asian origin and an eastern portion with fauna reflecting Australasia.",
+        "in": 1505,
+        "out": 78,
+        "cost": 0.001895,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.82,
+        "seconds": 3.46,
+        "api_seconds": 1.18,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The animal boundary Alfred Russel Wallace found in the Malay Archipelago is called the **Wallace Line**, which is a faunal boundary that runs through the strait between Bali and Lombok, separating the Indonesian archipelago into two distinct parts with Asian fauna in the west and Australasian fauna in the east.",
+        "in": 1259,
+        "out": 73,
+        "cost": 0.001624,
+        "calls": 1,
+        "seconds": 3.16,
+        "api_seconds": 1.3,
+        "correct": true
+      }
+    },
+    {
+      "q": "At which battle did Alfred the Great defeat the Vikings in 878?",
+      "type": "fact",
+      "expect": [
+        "Edington"
+      ],
+      "grape": {
+        "answer": "Alfred the Great defeated the Vikings at the **Battle of Edington in 878**. According to the excerpts, he won a decisive victory there and subsequently made an agreement with the Vikings dividing England between Anglo-Saxon territory and the Viking-ruled Danelaw.",
+        "in": 1618,
+        "out": 60,
+        "cost": 0.001918,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.9,
+        "seconds": 3.59,
+        "api_seconds": 1.14,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Alfred the Great defeated the Vikings at the **Battle of Edington in 878**, where he won a decisive victory and subsequently made an agreement with the Vikings dividing England between Anglo-Saxon territory and the Viking-ruled Danelaw.",
+        "in": 1405,
+        "out": 53,
+        "cost": 0.00167,
+        "calls": 1,
+        "seconds": 2.97,
+        "api_seconds": 1.17,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the largest city in Andhra Pradesh?",
+      "type": "fact",
+      "expect": [
+        "Visakhapatnam"
+      ],
+      "grape": {
+        "answer": "Based on the excerpts provided, the largest city in Andhra Pradesh is Visakhapatnam (the text appears to be cut off as \"Visa…\" in the excerpt). The first excerpt states \"Amaravati is the capital of the state, with the largest city being Visa…\"",
+        "in": 1513,
+        "out": 68,
+        "cost": 0.001853,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.51,
+        "api_seconds": 1.28,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Based on the excerpts provided, the largest city in Andhra Pradesh is Visakhapatnam, as stated in the first excerpt: \"Amaravati is the capital of the state, with the largest city being Visakhapatnam.\"",
+        "in": 1325,
+        "out": 57,
+        "cost": 0.0016099999999999999,
+        "calls": 1,
+        "seconds": 2.84,
+        "api_seconds": 1.07,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which earlier online service does AOL trace its history to?",
+      "type": "fact",
+      "expect": [
+        "PlayNET"
+      ],
+      "grape": {
+        "answer": "According to the excerpts, AOL traces its history to an online service known as **PlayNET**, which licensed its software to Quantum Link (Q-Link) that went online in November 1985, eventually being renamed America Online in 1989.",
+        "in": 1443,
+        "out": 57,
+        "cost": 0.001728,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.83,
+        "seconds": 3.47,
+        "api_seconds": 1.1,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, AOL traces its history to an online service known as **PlayNET**, which licensed its software to Quantum Link (Q-Link), that went online in November 1985 and was eventually renamed as America Online in 1989.",
+        "in": 1517,
+        "out": 59,
+        "cost": 0.0018119999999999998,
+        "calls": 1,
+        "seconds": 2.93,
+        "api_seconds": 1.11,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which atomic numbers does the actinide series span?",
+      "type": "number",
+      "expect": [
+        "89",
+        "102"
+      ],
+      "grape": {
+        "answer": "The actinide series spans atomic numbers 89 to 102, encompassing the 14 metallic chemical elements from actinium through nobelium.",
+        "in": 1393,
+        "out": 35,
+        "cost": 0.001568,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.85,
+        "seconds": 3.41,
+        "api_seconds": 0.88,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpt, the actinide series encompasses the 14 metallic chemical elements with atomic numbers from **89 to 102**, spanning from actinium through nobelium.",
+        "in": 1316,
+        "out": 41,
+        "cost": 0.0015209999999999998,
+        "calls": 1,
+        "seconds": 2.99,
+        "api_seconds": 0.99,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who lived longer, Antoine Lavoisier or Alfred Russel Wallace?",
+      "type": "cross",
+      "expect": [
+        "Wallace"
+      ],
+      "grape": {
+        "answer": "Alfred Russel Wallace lived longer. Lavoisier lived 50 years (1743-1794), while Wallace lived 90 years (1823-1913).",
+        "in": 2075,
+        "out": 73,
+        "cost": 0.00244,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.42,
+        "searched": [
+          [
+            "Antoine Lavoisier birth death dates lifespan",
+            "Alfred Russel Wallace birth death dates lifespan"
+          ]
+        ],
+        "seconds": 7.49,
+        "api_seconds": 3.16,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Alfred Russel Wallace lived longer. According to the excerpts, Antoine Lavoisier lived from 26 August 1743 to 8 May 1794 (50 years), while Alfred Russel Wallace lived from 8 January 1823 to 7 November 1913 (90 years).",
+        "in": 1324,
+        "out": 76,
+        "cost": 0.0017040000000000002,
+        "calls": 1,
+        "seconds": 3.18,
+        "api_seconds": 1.25,
+        "correct": true
+      }
+    },
+    {
+      "q": "What will the weather be in London tomorrow?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 1409,
+        "out": 8,
+        "cost": 0.0014490000000000002,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.63,
+        "seconds": 3.56,
+        "api_seconds": 1.35,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 992,
+        "out": 8,
+        "cost": 0.001032,
+        "calls": 1,
+        "seconds": 2.67,
+        "api_seconds": 0.77,
+        "correct": true
+      }
+    },
+    {
+      "q": "Write a haiku about autumn.",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "I appreciate the creative request, but the excerpts provided don't contain guidance on writing haikus or their structure. While the excerpts mention haiku poets like Allen Ginsberg and haiku techniques, they don't include enough information to help me write an original autumn haiku based solely on these excerpts.\n\nHere's a haiku about autumn I can offer you directly:\n\nCrimson leaves now fall,\nChill winds whisper through bare branches,\nSummer's warmth has fled.",
+        "in": 2174,
+        "out": 178,
+        "cost": 0.003064,
+        "calls": 2,
+        "route": "answer-search",
+        "coverage": 0.63,
+        "searched": [
+          [
+            "Write a haiku about autumn.",
+            "haiku autumn poem"
+          ]
+        ],
+        "seconds": 9.13,
+        "api_seconds": 4.72,
+        "correct": false
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 1500,
+        "out": 8,
+        "cost": 0.0015400000000000001,
+        "calls": 1,
+        "seconds": 2.8,
+        "api_seconds": 1.02,
+        "correct": true
+      }
+    },
+    {
+      "q": "Translate 'good morning' into German.",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.\n\nThe excerpts provided do not contain information about German language translations. While one excerpt mentions \"Good morning\" in an English advertising slogan, there is no German translation provided in these documents.",
+        "in": 1562,
+        "out": 47,
+        "cost": 0.001797,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.71,
+        "seconds": 3.53,
+        "api_seconds": 1.28,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided do not contain a translation of \"good morning\" into German.",
+        "in": 1174,
+        "out": 26,
+        "cost": 0.0013039999999999998,
+        "calls": 1,
+        "seconds": 3.09,
+        "api_seconds": 0.92,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is 144 divided by 12?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 0,
+        "out": 0,
+        "cost": 0,
+        "calls": 0,
+        "route": "refused",
+        "coverage": 0.0,
+        "seconds": 0.43,
+        "api_seconds": 0.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided discuss Euclid's algorithm for finding the greatest common divisor using successive subtractions, not basic arithmetic division problems.",
+        "in": 1580,
+        "out": 39,
+        "cost": 0.001775,
+        "calls": 1,
+        "seconds": 3.03,
+        "api_seconds": 1.13,
+        "correct": true
+      }
+    },
+    {
+      "q": "How do I install Python on Windows?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.\n\nThe excerpts provided discuss Python as a mythological serpent and references to the word \"python\" in linguistic contexts, but they do not contain any information about installing Python (the programming language) on Windows.",
+        "in": 991,
+        "out": 51,
+        "cost": 0.001246,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.53,
+        "seconds": 3.21,
+        "api_seconds": 1.12,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided contain information about Windows operating system history, Bluetooth compatibility, the Acorn Electron computer, and a battle deployment reference, but none of them contain instructions on how to install Python on Windows.",
+        "in": 1251,
+        "out": 53,
+        "cost": 0.001516,
+        "calls": 1,
+        "seconds": 3.8,
+        "api_seconds": 1.99,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who won the 2018 Wimbledon men's singles final?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.\n\nThe excerpts provided are about Andre Agassi's tennis career and British Airways, but they do not contain information about who won the 2018 Wimbledon men's singles final.",
+        "in": 1502,
+        "out": 50,
+        "cost": 0.001752,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.69,
+        "seconds": 3.64,
+        "api_seconds": 1.15,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided contain information about Andre Agassi's tennis career, but they do not include information about the 2018 Wimbledon men's singles final winner.",
+        "in": 1516,
+        "out": 47,
+        "cost": 0.001751,
+        "calls": 1,
+        "seconds": 2.87,
+        "api_seconds": 1.1,
+        "correct": true
+      }
+    }
+  ]
+}

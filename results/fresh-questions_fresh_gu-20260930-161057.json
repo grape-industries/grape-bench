@@ -1,0 +1,1135 @@
+{
+  "corpus": "fresh",
+  "provider": "claude",
+  "model": "haiku",
+  "cost_basis": "Claude API list price reported by the claude CLI (haiku, thinking off), grape server rerank + gate, 5 passages",
+  "embed": "intfloat/multilingual-e5-large",
+  "meta": {
+    "date": "2026-09-30 16:10",
+    "questions": "questions_fresh_gu.json",
+    "embed_key": "e5-large",
+    "modes": [
+      "grape",
+      "rag"
+    ],
+    "corpus_files": 12,
+    "corpus_bytes": 632071,
+    "chunks": 778,
+    "settings": {
+      "limit": 8,
+      "snippet": 600,
+      "top_k": 5,
+      "chunk_chars": 1000
+    },
+    "thinking": false,
+    "rerank": null,
+    "gate": false,
+    "server_rerank": true,
+    "server_limit": 5,
+    "judge": true,
+    "grape_version": "0.1.0",
+    "bench_commit": null
+  },
+  "setup_seconds": {
+    "grape": 0.04707497799972771,
+    "grape_update": 0.08236781699997664,
+    "rag": 750.6451247060031
+  },
+  "rows": [
+    {
+      "q": "છાપખાના (પ્રિન્ટિંગ પ્રેસ)ની શોધ કોણે અને લગભગ કયા વર્ષમાં કરી હતી?",
+      "type": "fact",
+      "expect": [
+        [
+          "Gutenberg",
+          "ગુટેનબર્ગ",
+          "ગુટનબર્ગ",
+          "ગ્યુટેનબર્ગ",
+          "ગુટેનબર્ગે"
+        ],
+        [
+          "1440",
+          "૧૪૪૦"
+        ]
+      ],
+      "grape": {
+        "answer": "છાપખાના (પ્રિન્ટિંગ પ્રેસ)ની શોધ જર્મન સુવર્ણકાર જોહાન્સ ગુટેનબર્ગે લગભગ 1440માં કરી હતી. તેણે ચાર હાલના તકનીકો—સ્ક્રુ પ્રેસ, મુવેબલ ટાઈપ, કોડેક્સ બુક ફોર્મેટ અને યાંત્રિક કાગળ ઉત્પાદનનો ઉપયોગ કરીને આ ક્રાંતિકારી શોધ કરી હતી.",
+        "in": 1869,
+        "out": 238,
+        "cost": 0.003059,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Who invented the printing press and in what year?"
+          ]
+        ],
+        "seconds": 9.53,
+        "api_seconds": 6.08,
+        "correct": true
+      },
+      "rag": {
+        "answer": "છાપખાનાની શોધ જર્મન સોનાર **જોહાનેસ ગુટેનબર્ગ** દ્વારા **લગભગ ૧૪૪૦ વર્ષમાં** કરવામાં આવી હતી.",
+        "in": 1886,
+        "out": 91,
+        "cost": 0.002341,
+        "calls": 1,
+        "seconds": 4.51,
+        "api_seconds": 2.62,
+        "correct": true
+      }
+    },
+    {
+      "q": "ઓક્ટોપસને કેટલાં હૃદય હોય છે?",
+      "type": "number",
+      "expect": [
+        [
+          "3",
+          "૩",
+          "ત્રણ",
+          "three"
+        ]
+      ],
+      "grape": {
+        "answer": "ઓક્ટોપસને ત્રણ હૃદય હોય છે - એક મુખ્ય (સિસ્ટેમિક) હૃદય જે શરીરમાં લોહી પરિવહન કરે છે અને બે ગાણા (બ્રાંકિયલ) હૃદય જે બે ગાણામાંથી લોહી પમ્પ કરે છે.",
+        "in": 2003,
+        "out": 151,
+        "cost": 0.002758,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Octopus hearts how many"
+          ]
+        ],
+        "seconds": 8.3,
+        "api_seconds": 4.26,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ઓક્ટોપસને **ત્રણ હૃદય** હોય છે - એક મુખ્ય હૃદય જે શરીરની આસપાસ રક્ત ફરે છે અને બે ગિલ હૃદય જે બે ગિલમાંથી પંપ કરે છે।",
+        "in": 1457,
+        "out": 108,
+        "cost": 0.001997,
+        "calls": 1,
+        "seconds": 4.78,
+        "api_seconds": 2.97,
+        "correct": true
+      }
+    },
+    {
+      "q": "એફિલ ટાવર કેટલો ઊંચો છે?",
+      "type": "number",
+      "expect": [
+        [
+          "330",
+          "૩૩૦"
+        ]
+      ],
+      "grape": {
+        "answer": "એફિલ ટાવર 330 મીટર (1,083 ફીટ) ઊંચો છે, જે લગભગ 81-માળીની ઇમારતની ઊંચાઈ જેટલો છે અને પેરિસમાં સૌથી ઊંચો માળખો છે।",
+        "in": 1859,
+        "out": 121,
+        "cost": 0.002464,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "How tall is the Eiffel Tower?"
+          ]
+        ],
+        "seconds": 7.92,
+        "api_seconds": 3.64,
+        "correct": true
+      },
+      "rag": {
+        "answer": "એફિલ ટાવર **330 મીટર (1,083 ફૂટ) ઊંચો છે**, જે પેરિસમાં સૌથી ઊંચી રચના છે.",
+        "in": 1802,
+        "out": 68,
+        "cost": 0.002142,
+        "calls": 1,
+        "seconds": 5.16,
+        "api_seconds": 2.0,
+        "correct": true
+      }
+    },
+    {
+      "q": "એફિલ ટાવરનું નામ કોના પરથી રાખવામાં આવ્યું છે?",
+      "type": "fact",
+      "expect": [
+        [
+          "Gustave",
+          "ગુસ્તાવ",
+          "ગુસ્તાફ",
+          "ગુસ્તાવે"
+        ]
+      ],
+      "grape": {
+        "answer": "એફિલ ટાવરનું નામ ઇંજિનિયર ગુસ્તાવ એફિલ પરથી રાખવામાં આવ્યું છે, જેની કંપનીએ 1887 થી 1889 દરમિયાન ટાવર ડિઝાઇન અને બાંધ્યો હતો.",
+        "in": 1834,
+        "out": 134,
+        "cost": 0.002504,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Eiffel Tower named after whom designer engineer"
+          ]
+        ],
+        "seconds": 8.4,
+        "api_seconds": 3.92,
+        "correct": true
+      },
+      "rag": {
+        "answer": "એફિલ ટાવરનું નામ ઇજનેર **ગુસ્તાવ એફિલ** (Gustave Eiffel) પરથી રાખવામાં આવ્યું છે, જેની કંપનીએ 1887 થી 1889 દરમિયાન આ ટાવરને ડિઝાઇન અને બનાવ્યો હતો.",
+        "in": 1890,
+        "out": 129,
+        "cost": 0.002535,
+        "calls": 1,
+        "seconds": 5.18,
+        "api_seconds": 3.2,
+        "correct": true
+      }
+    },
+    {
+      "q": "પ્રથમ રસી કોણે બનાવી હતી?",
+      "type": "fact",
+      "expect": [
+        [
+          "Jenner",
+          "જેનર",
+          "જેન્નર"
+        ]
+      ],
+      "grape": {
+        "answer": "Edward Jenner એ પ્રથમ રસી બનાવી હતી; તેમણે 1798માં કાउપોક્સ વિરુદ્ધ રસી વિકસિત કરી હતી અને વેક્સિન (રસી) શબ્દ પણ તેમના નામ પર આધારિત છે.",
+        "in": 1775,
+        "out": 124,
+        "cost": 0.002395,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Who invented the first vaccine?"
+          ]
+        ],
+        "seconds": 7.64,
+        "api_seconds": 3.61,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Edward Jenner એ પ્રથમ રસી બનાવી હતી અને રસીનો ખ્યાલ પણ તેણે જ વિકસિત કર્યો હતો, જેમાં તેણે 1798માં ગાયના શીતળા (cowpox) ની રક્ષણાત્મક અસર વર્ણવી હતી.",
+        "in": 1096,
+        "out": 122,
+        "cost": 0.001706,
+        "calls": 1,
+        "seconds": 5.32,
+        "api_seconds": 3.22,
+        "correct": true
+      }
+    },
+    {
+      "q": "પ્રથમ આધુનિક ઓલિમ્પિક રમતો ક્યાં અને ક્યારે યોજાઈ હતી?",
+      "type": "fact",
+      "expect": [
+        [
+          "Athens",
+          "એથેન્સ"
+        ],
+        [
+          "1896",
+          "૧૮૯૬"
+        ]
+      ],
+      "grape": {
+        "answer": "પ્રથમ આધુનિક ઓલિમ્પિક રમતો **1896માં એથેન્સ, ગ્રીસમાં** યોજાઈ હતી. બેરોન પિયર ડે કુબર્ટિને 1894માં ઇન્ટરનેશનલ ઓલિમ્પિક કમિટી (IOC) સ્થાપન કરી હતી, જેણે આ પ્રથમ આધુનિક રમતો આયોજિત કરી હતી.",
+        "in": 1799,
+        "out": 193,
+        "cost": 0.002764,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "When and where were the first modern Olympic Games held?"
+          ]
+        ],
+        "seconds": 8.11,
+        "api_seconds": 4.27,
+        "correct": true
+      },
+      "rag": {
+        "answer": "પ્રથમ આધુનિક ઓલિમ્પિક રમતો **1896 માં એથેન્સ**માં યોજાઈ હતી. આ રમતો IOC ની સંસ્થા હેઠળ પાનાથેનાઈક સ્ટેડિયમમાં યોજાઈ હતી, જેમાં 14 દેશ અને 241 એથલેટ્સ 43 ઈવેન્ટમાં ભાગ લીધો હતો.",
+        "in": 1373,
+        "out": 170,
+        "cost": 0.002223,
+        "calls": 1,
+        "seconds": 5.86,
+        "api_seconds": 3.96,
+        "correct": true
+      }
+    },
+    {
+      "q": "આંતરરાષ્ટ્રીય ઓલિમ્પિક સમિતિની સ્થાપના કોણે કરી હતી?",
+      "type": "fact",
+      "expect": [
+        [
+          "Coubertin",
+          "કુબર્ટિન",
+          "કુબર્ટીન",
+          "કૂબર્ટિન",
+          "કુબરટિન",
+          "કુબેર્ટિન",
+          "કૌબર્ટિન",
+          "કુબર્તાં",
+          "કુબર્તિન",
+          "કુબર્ટાં",
+          "કૂબર્તાં",
+          "કુબર્તી",
+          "કુબર્ત"
+        ]
+      ],
+      "grape": {
+        "answer": "બેરોન પિયર ડે કુબર્તીને 1894માં આંતરરાષ્ટ્રીય ઓલિમ્પિક સમિતિ (IOC) ની સ્થાપના કરી હતી, જે 1896માં એથેન્સમાં પ્રથમ આધુનિક ખેલોમાં આગળ વધ્યું.",
+        "in": 1821,
+        "out": 142,
+        "cost": 0.002531,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Who founded the International Olympic Committee Olympic Games"
+          ]
+        ],
+        "seconds": 7.37,
+        "api_seconds": 3.54,
+        "correct": true
+      },
+      "rag": {
+        "answer": "બેરોન પિયર ડી કુબર્ટિને 1894માં આંતરરાષ્ટ્રીય ઓલિમ્પિક સમિતિ (IOC)ની સ્થાપના કરી હતી, જ્યારે તેમણે આંતરરાષ્ટ્રીય શાંતિ અને મૈત્રી પ્રોત્સાહિત કરવાના ઉદ્દેશ્ય સાથે ક્રીડા દ્વારા આંતરરાષ્ટ્રીય રોટેટિંગ ઓલિમ્પિક ગેમ્સ સ્થાપિત કરવાનું લક્ષ્ય રાખ્યું હતું.",
+        "in": 1222,
+        "out": 246,
+        "cost": 0.002452,
+        "calls": 1,
+        "seconds": 7.38,
+        "api_seconds": 5.86,
+        "correct": true
+      }
+    },
+    {
+      "q": "સહારા રણનો વિસ્તાર કેટલા ચોરસ કિલોમીટર છે?",
+      "type": "number",
+      "expect": [
+        [
+          "9,200,000",
+          "9.2 million",
+          "9 200 000",
+          "92,00,000",
+          "૯૨,૦૦,૦૦૦",
+          "૯૨ લાખ",
+          "92 લાખ",
+          "9.2 મિલિયન",
+          "૯.૨ મિલિયન"
+        ]
+      ],
+      "grape": {
+        "answer": "સહારા રણનો વિસ્તાર ૯,૨૦૦,૦૦૦ ચોરસ કિલોમીટર છે, જે તેને વિશ્વનું સૌથી મોટું ગરમ રણ બનાવે છે.",
+        "in": 1761,
+        "out": 105,
+        "cost": 0.002286,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Sahara desert area square kilometers"
+          ]
+        ],
+        "seconds": 7.71,
+        "api_seconds": 3.46,
+        "correct": true,
+        "judge_cost": 0.000912,
+        "judged": true
+      },
+      "rag": {
+        "answer": "સહારા રણનો વિસ્તાર **9,200,000 ચોરસ કિલોમીટર** છે, જે વિશ્વનો સૌથી મોટો ગરમ રણ છે અને એકંદર ત્રીજો સૌથી મોટો રણ છે.",
+        "in": 1696,
+        "out": 102,
+        "cost": 0.002206,
+        "calls": 1,
+        "seconds": 4.57,
+        "api_seconds": 2.73,
+        "correct": true
+      }
+    },
+    {
+      "q": "\"સિલ્ક રોડ\" (રેશમ માર્ગ) શબ્દ કોણે લોકપ્રિય બનાવ્યો?",
+      "type": "fact",
+      "expect": [
+        [
+          "Richthofen",
+          "રિક્ટહોફેન",
+          "રિચથોફેન",
+          "રિખ્તહોફેન",
+          "રિક્થોફેન",
+          "રિચ્થોફેન",
+          "રિખ્થોફેન",
+          "રિક્ટોફેન",
+          "રિખ્ટહોફેન"
+        ]
+      ],
+      "grape": {
+        "answer": "Ferdinand von Richthofen એ 1877માં \"સિલ્ક રોડ\" શબ્દને લોકપ્રિય બનાવ્યો, જે જર્મન શબ્દ \"Seidenstraße\" (શાબ્દિક અર્થે \"રેશમ માર્ગ\") પરથી આવ્યો હતો.",
+        "in": 1841,
+        "out": 131,
+        "cost": 0.002496,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Who popularized the term Silk Road?"
+          ]
+        ],
+        "seconds": 7.39,
+        "api_seconds": 3.42,
+        "correct": true
+      },
+      "rag": {
+        "answer": "આપેલ અંશોના આધારે, \"સિલ્ક રોડ\" શબ્દ **ફર્ડિનાન્ડ વોન રિક્તહોફેન** દ્વારા **1877 માં લોકપ્રિય બનાવવામાં આવ્યો** હતો, જેમણે 1868 થી 1872 સુધી ચીનમાં સાત અભિયાનો કર્યા હતા।",
+        "in": 1385,
+        "out": 151,
+        "cost": 0.00214,
+        "calls": 1,
+        "seconds": 5.65,
+        "api_seconds": 3.79,
+        "correct": true,
+        "judge_cost": 0.000957,
+        "judged": true
+      }
+    },
+    {
+      "q": "ચીની દંતકથા અનુસાર ચાની શોધ સૌ પ્રથમ કોણે કરી હતી?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "Shennong",
+          "શેનનોંગ",
+          "શેનોંગ",
+          "શેન નોંગ",
+          "શેન્નોંગ",
+          "શેનનૉંગ"
+        ]
+      ],
+      "grape": {
+        "answer": "ચીની દંતકથા અનુસાર, ચાની શોધ શેનનોંગ (Shennong) નામના પૌરાણિક વ્યક્તિએ ૨૭૩૭ ઈ.સ.પૂ.માં કરી હતી. તેમ છતાં, પુરાવાઓ સૂચવે છે કે ચા પીવાનો રિવાજ દક્ષિણપશ્ચિમ ચીનમાંથી આવી શકે છે.",
+        "in": 1767,
+        "out": 186,
+        "cost": 0.002697,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Tea discovery legend China first person invented history"
+          ]
+        ],
+        "seconds": 8.75,
+        "api_seconds": 5.09,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ચીની દંતકથા અનુસાર, ચાની શોધ સૌ પ્રથમ પૌરાણિક શેનનોંગ (Shennong)એ ૨૭૩૭ BC માં કરી હતી. જો કે, પુરાવા સૂચવે છે કે ચા પીવાની પ્રણાલી દક્ષિણપશ્ચિમ ચીનમાંથી આવી હતી.",
+        "in": 1880,
+        "out": 153,
+        "cost": 0.0026449999999999998,
+        "calls": 1,
+        "seconds": 5.79,
+        "api_seconds": 3.93,
+        "correct": true
+      }
+    },
+    {
+      "q": "બ્લેક હોલની પ્રથમ સીધી છબી કયા વર્ષમાં પ્રકાશિત થઈ હતી?",
+      "type": "number",
+      "expect": [
+        [
+          "2019",
+          "૨૦૧૯"
+        ]
+      ],
+      "grape": {
+        "answer": "બ્લેક હોલની પ્રથમ સીધી છબી **2019** માં પ્રકાશિત થઈ હતી, જ્યારે 10 એપ્રિલ 2019 ના રોજ ઇવેન્ટ હોરાઇઝન ટેલિસ્કોપ (EHT) દ્વારા મેસિયર 87ના સુપરમેસિવ બ્લેક હોલની પ્રથમ સીધી છબી પ્રકાશિત કરવામાં આવી હતી.",
+        "in": 1774,
+        "out": 198,
+        "cost": 0.002764,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Black hole first direct image published year"
+          ]
+        ],
+        "seconds": 8.56,
+        "api_seconds": 5.01,
+        "correct": true
+      },
+      "rag": {
+        "answer": "બ્લેક હોલની પ્રથમ સીધી છબી **2019** માં પ્રકાશિત થઈ હતી, જ્યારે 10 એપ્રિલ 2019 ને Event Horizon Telescope (EHT) દ્વારા Messier 87 ની સુપરમેસીવ બ્લેક હોલની છબી પ્રકાશિત કરવામાં આવી હતી.",
+        "in": 1401,
+        "out": 142,
+        "cost": 0.002111,
+        "calls": 1,
+        "seconds": 5.34,
+        "api_seconds": 3.43,
+        "correct": true
+      }
+    },
+    {
+      "q": "બ્લેક હોલની આસપાસની એ સીમાને શું કહેવાય છે જેની પારથી કશું બહાર આવી શકતું નથી?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "event horizon",
+          "ઇવેન્ટ હોરાઇઝન",
+          "ઈવેન્ટ હોરાઇઝન",
+          "ઇવેન્ટ હોરાઈઝન",
+          "ઇવેન્ટ હોરિઝન",
+          "ઘટના ક્ષિતિજ"
+        ]
+      ],
+      "grape": {
+        "answer": "બ્લેક હોલની આસપાસની સીમાને **ઇવેન્ટ હોરાઇઝન** (event horizon) કહેવાય છે, જેની પારથી કશું પણ, પ્રકાશ પણ બહાર આવી શકતું નથી. આ સીમા એ છે જ્યાં કશું પણ ફક્ત અંદરની તરફ જાય શકે છે અને એક જીણ બહાર નીકળી શકતું નથી.",
+        "in": 1664,
+        "out": 180,
+        "cost": 0.0025640000000000003,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Black hole event horizon boundary escape"
+          ]
+        ],
+        "seconds": 8.41,
+        "api_seconds": 4.93,
+        "correct": true
+      },
+      "rag": {
+        "answer": "બ્લેક હોલની આસપાસની તે સીમાને **ઇવેન્ટ હોરાઇઝન** (event horizon) કહેવાય છે, જેની પારથી કશું બહાર આવી શકતું નથી. આ સીમા એ spacetime માં એક બાઉન્ડરી છે જેમાંથી પદાર્થ અને પ્રકાશ માત્ર અંદરની તરફ જઈ શકે છે અને કશું પણ,나પણ પ્રકાશ પણ, બહાર નીકળી શકતું નથી.",
+        "in": 1346,
+        "out": 200,
+        "cost": 0.002346,
+        "calls": 1,
+        "seconds": 6.35,
+        "api_seconds": 4.91,
+        "correct": true
+      }
+    },
+    {
+      "q": "મેરી ક્યુરીએ કેટલા નોબેલ પુરસ્કાર જીત્યા હતા, અને કયા ક્ષેત્રોમાં?",
+      "type": "number",
+      "expect": [
+        [
+          "2",
+          "૨",
+          "two",
+          "બે"
+        ],
+        [
+          "Physics",
+          "ભૌતિક",
+          "ફિઝિક્સ"
+        ],
+        [
+          "Chemistry",
+          "રસાયણ",
+          "કેમિસ્ટ્રી",
+          "કેમેસ્ટ્રી"
+        ]
+      ],
+      "grape": {
+        "answer": "મેરી ક્યુરીએ બે નોબેલ પુરસ્કાર જીત્યા હતા: 1903માં ભૌતિકશાસ્ત્રમાં (તેમના પતિ પિયર ક્યુરી સાથે) અને 1911માં રસાયણશાસ્ત્રમાં (રેડિયમ અને પોલોનિયમ તત્વોની શોધ માટે).",
+        "in": 1586,
+        "out": 178,
+        "cost": 0.002476,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Marie Curie Nobel Prize awards fields categories",
+            "Marie Curie how many Nobel Prizes won"
+          ]
+        ],
+        "seconds": 8.91,
+        "api_seconds": 4.73,
+        "correct": true
+      },
+      "rag": {
+        "answer": "મેરી ક્યુરીએ બે નોબેલ પુરસ્કાર જીત્યા હતા: 1903માં ભૌતિકશાસ્ત્રમાં (તેમના પતિ પિયર ક્યુરી અને હેનરી બેકેરેલ સાથે) અને 1911માં રસાયણશાસ્ત્રમાં (રેડિયમ અને પોલોનિયમ તત્વોની શોધ માટે).",
+        "in": 1550,
+        "out": 164,
+        "cost": 0.0023699999999999997,
+        "calls": 1,
+        "seconds": 6.06,
+        "api_seconds": 4.07,
+        "correct": true
+      }
+    },
+    {
+      "q": "મેરી ક્યુરીનું મૃત્યુ કઈ બીમારીથી થયું હતું?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "aplastic",
+          "એપ્લાસ્ટિક",
+          "અપ્લાસ્ટિક",
+          "એપ્લાસ્ટીક"
+        ]
+      ],
+      "grape": {
+        "answer": "મેરી ક્યુરીનું મૃત્યુ **એપ્લાસ્ટિક એનેમિયા** (aplastic anaemia) બીમારીથી થયું હતું, જે તેમના વૈજ્ઞાનિક સંશોધન અને પ્રથમ વિશ્વ યુદ્ધ દરમિયાન ક્ષેત્ર હોસ્પિટલોમાં રેડિયોલોજીકલ કાર્ય માટે રેડિયેશનના સંપર્કમાં આવવાથી સંભવતः થયું હતું.",
+        "in": 1840,
+        "out": 220,
+        "cost": 0.00294,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "What disease did Marie Curie die from?"
+          ]
+        ],
+        "seconds": 9.44,
+        "api_seconds": 5.66,
+        "correct": true
+      },
+      "rag": {
+        "answer": "મેરી ક્યુરીનું મૃત્યુ **aplastic anaemia** (આપ્લેસ્ટિક એનીમિયા) નામની બીમારીથી થયું હતું, જે તેણીના લાંબા સમય સુધી રેડિયેશનના સંપર્કમાં આવવાથી બોન મેરોને નુકસાન થવાના કારણે હતું.",
+        "in": 1406,
+        "out": 138,
+        "cost": 0.0020959999999999998,
+        "calls": 1,
+        "seconds": 5.6,
+        "api_seconds": 3.77,
+        "correct": true
+      }
+    },
+    {
+      "q": "એમેઝોન નદી કયા મહાસાગરમાં ઠલવાય છે?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "Atlantic",
+          "એટલાન્ટિક",
+          "આટલાન્ટિક",
+          "એટલાંટિક",
+          "અટલાંટિક",
+          "અટલાન્ટિક"
+        ]
+      ],
+      "grape": {
+        "answer": "એમેઝોન નદી **અટલાન્ટિક મહાસાગર**માં ઠલવાય છે. આ નદી પૃથ્વીના તાજા પાણીનો લગભગ 20% મહાસાગરમાં પ્રવેશ કરાવે છે.",
+        "in": 1684,
+        "out": 112,
+        "cost": 0.002244,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Amazon River ocean Atlantic"
+          ]
+        ],
+        "seconds": 7.25,
+        "api_seconds": 3.51,
+        "correct": true
+      },
+      "rag": {
+        "answer": "એમેઝોન નદી **એટલાન્ટિક મહાસાગર**માં ઠલવાય છે. અંશપત્ર અનુસાર, એમેઝોન વર્ષે સરેરાશ 209,000 ઘનમીટર પ્રતિ સેકન્ડ પાણી એટલાન્ટિક મહાસાગરમાં છોડે છે અને પૃથ્વીના તાજા પાણીમાં પ્રવેશતા પાણીનો લગભગ 20% હિસ્સો આ નદી દ્વારા આવે છે.",
+        "in": 1452,
+        "out": 206,
+        "cost": 0.002482,
+        "calls": 1,
+        "seconds": 6.25,
+        "api_seconds": 4.38,
+        "correct": true
+      }
+    },
+    {
+      "q": "ભૂતપૂર્વ સમુરાઇઓનો છેલ્લો મોટો સશસ્ત્ર બળવો કયો હતો?",
+      "type": "fact",
+      "expect": [
+        [
+          "Satsuma",
+          "સાત્સુમા",
+          "સત્સુમા",
+          "સાત્સુમાં"
+        ]
+      ],
+      "grape": {
+        "answer": "ભૂતપૂર્વ સમુરાઇઓનો છેલ્લો મોટો સશસ્ત્ર બળવો **સત્સુમા બળવો (1877)** હતો, જેનું નેતૃત્વ સાઇગો તાકામોરીએ કર્યું હતું. આ બળવોની હાર મધ્યવર્તી સરકારના લશ્કરી અને રાજકીય સત્તાની પુષ્ટિ કરી હતી.",
+        "in": 1492,
+        "out": 185,
+        "cost": 0.002417,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Samurai last major armed rebellion revolt"
+          ]
+        ],
+        "seconds": 8.97,
+        "api_seconds": 5.34,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ભૂતપૂર્વ સમુરાઇઓનો છેલ્લો મોટો સશસ્ત્ર બળવો **સત્સુમા બળવો (Satsuma Rebellion) હતો જે 1877માં થયો હતો**, જે સાઈગો તાકમોરીના નેતૃત્વમાં હતો. આ બળવોની હાર કેન્દ્રીય સરકારના સૈનિક અને રાજકીય સત્તાને પુષ્ટિ આપે છે અને ભૂતપૂર્વ સમુરાઇઓ દ્વારા મોટા પાયે સશસ્ત્ર પ્રતિરોધના અંતને ચિહ્નિત કરે છે.",
+        "in": 1258,
+        "out": 255,
+        "cost": 0.002533,
+        "calls": 1,
+        "seconds": 7.7,
+        "api_seconds": 5.98,
+        "correct": true
+      }
+    },
+    {
+      "q": "તલવારબાજી ઉપરાંત સમુરાઇની મુખ્ય લશ્કરી તાલીમ કઈ હતી?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "archery",
+          "તીરંદાજી",
+          "ધનુર્વિદ્યા",
+          "બાણ",
+          "ધનુષ"
+        ],
+        [
+          "horse",
+          "ઘોડ",
+          "અશ્વ"
+        ]
+      ],
+      "grape": {
+        "answer": "તલવારબાજી ઉપરાંત સમુરાઇની મુખ્ય લશ્કરી તાલીમ તીરંદાજી અને ઘોડેસવારી હતી. આ અંગે અંશ કહે છે કે \"તલવારબાજી, તીરંદાજી અને ઘોડેસવારી મુખ્ય લશ્કરી કુશલતા હતી.\"",
+        "in": 1848,
+        "out": 164,
+        "cost": 0.0026680000000000002,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "What was the main military training of samurai besides swordsmanship?"
+          ]
+        ],
+        "seconds": 9.04,
+        "api_seconds": 4.6,
+        "correct": true
+      },
+      "rag": {
+        "answer": "તલવારબાજી ઉપરાંત, સમુરાઇની મુખ્ય લશ્કરી તાલીમ ધનુષ્યબાજી અને ઘોડેસવારી હતી. આ શસ્ત્રોમાં માણસતા આવતા વર્ષોની તાલીમ જરૂરી હતી અને તેઓ સમુરાઇને સૈનિક દૃષ્ટિએ શ્રેષ્ઠ બનાતી હતી.",
+        "in": 1477,
+        "out": 174,
+        "cost": 0.002347,
+        "calls": 1,
+        "seconds": 5.44,
+        "api_seconds": 3.53,
+        "correct": true
+      }
+    },
+    {
+      "q": "ચાનાં પાંદડાં કયા છોડમાંથી લેવામાં આવે છે?",
+      "type": "paraphrase",
+      "expect": [
+        [
+          "Camellia",
+          "કેમેલિયા",
+          "કેમેલીયા",
+          "કૅમેલિયા"
+        ]
+      ],
+      "grape": {
+        "answer": "ચાનાં પાંદડાં **ચા છોડ** (Tea plant) માંથી લેવામાં આવે છે, જે વૈજ્ঞાનિક રીતે *Camellia sinensis* છે અને તેના પાંદડાંને હાથથી અથવા મશીનોથી તોડવામાં આવે છે.",
+        "in": 1847,
+        "out": 127,
+        "cost": 0.002482,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "tea plant leaves source origin"
+          ]
+        ],
+        "seconds": 7.28,
+        "api_seconds": 3.84,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ચાનાં પાંદડાં **કેમેલિયા સાઈનેન્સિસ** (Camellia sinensis) છોડમાંથી લેવામાં આવે છે, જે પૂર્વ એશિયામાં મૂળ રૂપે આવતું સદાબહાર છોડ છે.",
+        "in": 1512,
+        "out": 110,
+        "cost": 0.002062,
+        "calls": 1,
+        "seconds": 4.91,
+        "api_seconds": 2.98,
+        "correct": true
+      }
+    },
+    {
+      "q": "પહેલાં શું થયું: મેરી ક્યુરીનો જન્મ કે એફિલ ટાવરનું બાંધકામ પૂર્ણ થવું? બંને વર્ષ જણાવો.",
+      "type": "cross",
+      "expect": [
+        [
+          "1867",
+          "૧૮૬૭"
+        ],
+        [
+          "1889",
+          "૧૮૮૯"
+        ]
+      ],
+      "grape": {
+        "answer": "એફિલ ટાવરનું બાંધકામ પૂર્ણ થવું પહેલાં થયું. એફિલ ટાવર 1889માં પૂર્ણ થયું અને મેરી ક્યુરીનો જન્મ 1867માં થયો - તેથી મેરી ક્યુરીનો જન્મ પહેલાં (1867) અને એફિલ ટાવરનું બાંધકામ પછીથી (1889) પૂર્ણ થયું.",
+        "in": 1785,
+        "out": 200,
+        "cost": 0.002785,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "When was Marie Curie born?",
+            "When was the Eiffel Tower completed?"
+          ]
+        ],
+        "seconds": 9.11,
+        "api_seconds": 4.99,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nઆપેલ અંશમાં એફિલ ટાવરનું બાંધકામ 1889 માં પૂર્ણ થયું તે જણાય છે, પરંતુ મેરી ક્યુરીનો જન્મ વર્ષ અથવા તેમણે કયું પહેલું થયું તેની માહિતી આપેલ અંશમાં નથી.",
+        "in": 1499,
+        "out": 138,
+        "cost": 0.002189,
+        "calls": 1,
+        "seconds": 5.54,
+        "api_seconds": 3.61,
+        "correct": false
+      }
+    },
+    {
+      "q": "ગુટેનબર્ગે છાપખાનાની શોધ કયા વર્ષમાં કરી અને પ્રથમ આધુનિક ઓલિમ્પિક રમતો કયા વર્ષમાં યોજાઈ?",
+      "type": "cross",
+      "expect": [
+        [
+          "1440",
+          "૧૪૪૦"
+        ],
+        [
+          "1896",
+          "૧૮૯૬"
+        ]
+      ],
+      "grape": {
+        "answer": "ગુટેનબર્ગે છાપખાનાની શોધ **1440ની આસપાસ** કરી, અને પ્રથમ આધુનિક ઓલિમ્પિક રમતો **1896માં એથેન્સમાં** યોજાઈ.",
+        "in": 1645,
+        "out": 128,
+        "cost": 0.0022849999999999997,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "What year did Gutenberg invent the printing press?",
+            "What year were the first modern Olympic Games held?"
+          ]
+        ],
+        "seconds": 7.5,
+        "api_seconds": 3.45,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ગુટેનબર્ગે છાપખાનાની શોધ લગભગ 1440 માં કરી, અને પ્રથમ આધુનિક ઓલિમ્પિક રમતો 1896 માં એથેન્સમાં યોજાઈ.",
+        "in": 1270,
+        "out": 95,
+        "cost": 0.001745,
+        "calls": 1,
+        "seconds": 4.42,
+        "api_seconds": 2.6,
+        "correct": true
+      }
+    },
+    {
+      "q": "એમેઝોન નદી કેટલી લાંબી છે?",
+      "type": "number",
+      "expect": [
+        [
+          "6,400",
+          "૬,૪૦૦",
+          "6400",
+          "૬૪૦૦",
+          "4,000",
+          "૪,૦૦૦"
+        ]
+      ],
+      "grape": {
+        "answer": "એમેઝોન નદી **6,275 km થી 6,992 km** (3,899 mi થી 4,345 mi) લાંબી છે, જોકે તેની ચોક્કસ લંબાઈ વિવાદાસ્પદ છે અને તેના ભૌગોલિક સ્ત્રોત અને મુખ્ય બિંદુ વિશે અલગ અલગ માપનથી આ આંકડાઓ બદલાય છે.",
+        "in": 1775,
+        "out": 169,
+        "cost": 0.0026200000000000004,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Amazon River length"
+          ]
+        ],
+        "seconds": 7.74,
+        "api_seconds": 4.31,
+        "correct": false,
+        "judge_cost": 0.000981,
+        "judged": true
+      },
+      "rag": {
+        "answer": "એમેઝોન નદી 6,400 કિલોમીટર (4,000 માઇલ) લાંબી છે, જોકે કેટલાક અહેવાલો અનુસાર તેની લંબાઈ 6,575 થી 7,062 કિલોમીટર (4,086 થી 4,388 માઇલ) સુધી બદલાય છે.",
+        "in": 1428,
+        "out": 128,
+        "cost": 0.002068,
+        "calls": 1,
+        "seconds": 4.96,
+        "api_seconds": 3.16,
+        "correct": true
+      }
+    },
+    {
+      "q": "ઓક્ટોપસને કેટલા હાથ હોય છે?",
+      "type": "number",
+      "expect": [
+        [
+          "8",
+          "૮",
+          "આઠ",
+          "eight"
+        ]
+      ],
+      "grape": {
+        "answer": "ઓક્ટોપસને આઠ હાથ હોય છે, જે ચાર જોડીમાં વિભાજિત હોય છે અને તેમના આંતરિક સપાટીઓ પર વર્તુળાકાર, ચોંધણીવાળા સક્શન કપ હોય છે.",
+        "in": 1808,
+        "out": 127,
+        "cost": 0.002443,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "How many arms does an octopus have?"
+          ]
+        ],
+        "seconds": 8.96,
+        "api_seconds": 4.79,
+        "correct": true
+      },
+      "rag": {
+        "answer": "ઓક્ટોપસને આઠ હાથ હોય છે. આ દસ્તાવેજમાં કહેવામાં આવ્યું છે કે ઓક્ટોપસ એક \"આઠ-અંગવાળો\" મોલસ્ક છે અને તેના આઠ અંગોથી ઘેરાયેલું મુખ છે.",
+        "in": 1516,
+        "out": 128,
+        "cost": 0.002156,
+        "calls": 1,
+        "seconds": 5.34,
+        "api_seconds": 3.26,
+        "correct": true
+      }
+    },
+    {
+      "q": "એફિલ ટાવર બનાવવા માટે કેટલા જુદા જુદા ભાગોની જરૂર પડી હતી?",
+      "type": "number",
+      "expect": [
+        [
+          "18,038",
+          "૧૮,૦૩૮",
+          "18038",
+          "૧૮૦૩૮"
+        ]
+      ],
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 2651,
+        "out": 65,
+        "cost": 0.002976,
+        "calls": 3,
+        "route": "route-search+again",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Eiffel Tower how many parts components"
+          ],
+          [
+            "Eiffel Tower how many parts components",
+            "એફિલ ટાવર કેટલા ભાગો ઘટકો પીસ વિભાગ"
+          ]
+        ],
+        "seconds": 9.07,
+        "api_seconds": 3.13,
+        "correct": false
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nઆપેલ અંશોમાં એફિલ ટાવર બનાવવા માટે જરૂરી જુદા જુદા ભાગોની સંખ્યા વિશે કોઈ માહિતી નથી.",
+        "in": 1738,
+        "out": 85,
+        "cost": 0.002163,
+        "calls": 1,
+        "seconds": 4.2,
+        "api_seconds": 2.47,
+        "correct": false
+      }
+    },
+    {
+      "q": "ઓસ્ટ્રેલિયાની રાજધાની કઈ છે?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 538,
+        "out": 93,
+        "cost": 0.001003,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 3.28,
+        "api_seconds": 1.38,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\n(ઓસ્ટ્રેલિયાની રાજધાની વિશે માહિતી આપેલા પુસ્તકોમાં નથી.)",
+        "in": 1064,
+        "out": 62,
+        "cost": 0.001374,
+        "calls": 1,
+        "seconds": 3.9,
+        "api_seconds": 1.9,
+        "correct": true
+      }
+    },
+    {
+      "q": "ચોકલેટ ચિપ કૂકીઝ કેવી રીતે બનાવવી?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 544,
+        "out": 87,
+        "cost": 0.000979,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 3.07,
+        "api_seconds": 1.27,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 522,
+        "out": 8,
+        "cost": 0.000562,
+        "calls": 1,
+        "seconds": 2.51,
+        "api_seconds": 0.65,
+        "correct": true
+      }
+    },
+    {
+      "q": "ગઈકાલની ફૂટબોલ મેચનો સ્કોર શું હતો?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 542,
+        "out": 92,
+        "cost": 0.0010019999999999999,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 3.28,
+        "api_seconds": 1.58,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 514,
+        "out": 8,
+        "cost": 0.000554,
+        "calls": 1,
+        "seconds": 2.72,
+        "api_seconds": 0.68,
+        "correct": true
+      }
+    },
+    {
+      "q": "મેરી ક્યુરીનો મનપસંદ પિઝા કયો હતો?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 540,
+        "out": 55,
+        "cost": 0.000815,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 3.25,
+        "api_seconds": 1.41,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 1369,
+        "out": 8,
+        "cost": 0.001409,
+        "calls": 1,
+        "seconds": 2.66,
+        "api_seconds": 0.77,
+        "correct": true
+      }
+    },
+    {
+      "q": "સમુદ્ર વિશે એક કવિતા લખો.",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 531,
+        "out": 94,
+        "cost": 0.001001,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.0,
+        "seconds": 3.35,
+        "api_seconds": 1.61,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 502,
+        "out": 8,
+        "cost": 0.000542,
+        "calls": 1,
+        "seconds": 3.32,
+        "api_seconds": 1.31,
+        "correct": true
+      }
+    }
+  ]
+}

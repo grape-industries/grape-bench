@@ -1,0 +1,10 @@
+[project]
+name = "grape-bench"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastembed>=0.8.1",
+    "httpx>=0.28.1",
+    "numpy>=2.5.3",
+    "pyarrow>=25.0.1",
+]

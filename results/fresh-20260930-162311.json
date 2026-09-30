@@ -1,0 +1,896 @@
+{
+  "corpus": "fresh",
+  "provider": "claude",
+  "model": "haiku",
+  "cost_basis": "Claude API list price reported by the claude CLI (haiku, thinking off), grape server rerank + gate, 5 passages",
+  "embed": "BAAI/bge-small-en-v1.5",
+  "meta": {
+    "date": "2026-09-30 16:23",
+    "questions": "questions_fresh.json",
+    "embed_key": "bge-small",
+    "modes": [
+      "grape",
+      "rag"
+    ],
+    "corpus_files": 12,
+    "corpus_bytes": 632071,
+    "chunks": 778,
+    "settings": {
+      "limit": 8,
+      "snippet": 600,
+      "top_k": 5,
+      "chunk_chars": 1000
+    },
+    "thinking": false,
+    "rerank": null,
+    "gate": false,
+    "server_rerank": true,
+    "server_limit": 5,
+    "judge": true,
+    "grape_version": "0.1.0",
+    "bench_commit": null
+  },
+  "setup_seconds": {
+    "grape": 0.04707497799972771,
+    "grape_update": 0.08524274999945192,
+    "rag": 97.67116754399831
+  },
+  "rows": [
+    {
+      "q": "Who invented the printing press, and around what year?",
+      "type": "fact",
+      "expect": [
+        "Gutenberg",
+        "1440"
+      ],
+      "grape": {
+        "answer": "Johannes Gutenberg, a German goldsmith, invented the printing press around 1440, utilizing movable type and other existing technologies to revolutionize literary production and communication during the early modern period.",
+        "in": 1249,
+        "out": 44,
+        "cost": 0.0014689999999999998,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.87,
+        "seconds": 3.22,
+        "api_seconds": 1.08,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Johannes Gutenberg, a German goldsmith, invented the printing press around 1440. This invention revolutionized literary production and communication by integrating existing technologies like movable type, the screw press, and mechanized paper production into a single working system.",
+        "in": 1323,
+        "out": 57,
+        "cost": 0.001608,
+        "calls": 1,
+        "seconds": 3.19,
+        "api_seconds": 1.17,
+        "correct": true
+      }
+    },
+    {
+      "q": "How many hearts does an octopus have?",
+      "type": "number",
+      "expect": [
+        [
+          "three",
+          "3"
+        ]
+      ],
+      "grape": {
+        "answer": "An octopus has three hearts: a systemic (main) heart that circulates blood around the body and two branchial (gill) hearts that pump blood through the two gills.",
+        "in": 1324,
+        "out": 43,
+        "cost": 0.001539,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.84,
+        "seconds": 3.53,
+        "api_seconds": 1.06,
+        "correct": true
+      },
+      "rag": {
+        "answer": "An octopus has three hearts: a systemic or main heart that circulates blood around the body and two branchial or gill hearts that pump blood through the two gills.",
+        "in": 1473,
+        "out": 41,
+        "cost": 0.0016779999999999998,
+        "calls": 1,
+        "seconds": 3.03,
+        "api_seconds": 1.03,
+        "correct": true
+      }
+    },
+    {
+      "q": "How tall is the Eiffel Tower?",
+      "type": "number",
+      "expect": [
+        "330"
+      ],
+      "grape": {
+        "answer": "The Eiffel Tower is 330 metres (1,083 ft) tall, about the same height as an 81-storey building, making it the tallest structure in Paris.",
+        "in": 1313,
+        "out": 45,
+        "cost": 0.0015379999999999999,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.23,
+        "api_seconds": 0.97,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Eiffel Tower is 330 metres (1,083 ft) tall, about the same height as an 81-storey building, and is the tallest structure in Paris.",
+        "in": 1565,
+        "out": 45,
+        "cost": 0.00179,
+        "calls": 1,
+        "seconds": 2.98,
+        "api_seconds": 1.15,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who is the Eiffel Tower named after?",
+      "type": "fact",
+      "expect": [
+        "Gustave"
+      ],
+      "grape": {
+        "answer": "The Eiffel Tower is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+        "in": 1238,
+        "out": 39,
+        "cost": 0.001433,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.29,
+        "api_seconds": 1.07,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Eiffel Tower is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+        "in": 1477,
+        "out": 39,
+        "cost": 0.001672,
+        "calls": 1,
+        "seconds": 2.85,
+        "api_seconds": 0.95,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who created the first vaccine?",
+      "type": "fact",
+      "expect": [
+        "Jenner"
+      ],
+      "grape": {
+        "answer": "Edward Jenner created the first vaccine in 1798, developing the concept of vaccination and producing the first vaccine against smallpox using cowpox.",
+        "in": 1150,
+        "out": 35,
+        "cost": 0.001325,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.5,
+        "api_seconds": 1.21,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Edward Jenner created the first vaccine, developing the concept of vaccines and creating the first vaccine using cowpox to protect against smallpox, which he described in his 1798 work \"Inquiry into the Variolae vaccinae Known as the Cow Pox.\"",
+        "in": 1182,
+        "out": 63,
+        "cost": 0.001497,
+        "calls": 1,
+        "seconds": 2.97,
+        "api_seconds": 1.2,
+        "correct": true
+      }
+    },
+    {
+      "q": "Where and when were the first modern Olympic Games held?",
+      "type": "fact",
+      "expect": [
+        "Athens",
+        "1896"
+      ],
+      "grape": {
+        "answer": "The first modern Olympic Games were held in **Athens in 1896**, hosted at the Panathenaic Stadium and organized by the International Olympic Committee founded by Baron Pierre de Coubertin in 1894.",
+        "in": 1196,
+        "out": 48,
+        "cost": 0.001436,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.34,
+        "api_seconds": 1.1,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, the first modern Olympic Games were held in **Athens in 1896**, following Baron Pierre de Coubertin's founding of the International Olympic Committee (IOC) in 1894.",
+        "in": 1184,
+        "out": 48,
+        "cost": 0.001424,
+        "calls": 1,
+        "seconds": 2.87,
+        "api_seconds": 1.04,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who founded the International Olympic Committee?",
+      "type": "fact",
+      "expect": [
+        "Coubertin"
+      ],
+      "grape": {
+        "answer": "Baron Pierre de Coubertin founded the International Olympic Committee (IOC) in 1894, inspired by the ancient Olympic Games and his attendance at the Wenlock Olympian Society's games in 1890.",
+        "in": 1220,
+        "out": 49,
+        "cost": 0.001465,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.23,
+        "api_seconds": 1.09,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Baron Pierre de Coubertin founded the International Olympic Committee (IOC) in 1894, inspired by his attendance at the Wenlock Olympian Games and his aim to promote international peace and friendship through sports.",
+        "in": 1226,
+        "out": 49,
+        "cost": 0.001471,
+        "calls": 1,
+        "seconds": 2.74,
+        "api_seconds": 1.1,
+        "correct": true
+      }
+    },
+    {
+      "q": "How big is the Sahara in square kilometres?",
+      "type": "number",
+      "expect": [
+        [
+          "9,200,000",
+          "9.2 million",
+          "9 200 000"
+        ]
+      ],
+      "grape": {
+        "answer": "The Sahara covers **9.2 million square kilometres** (3.6 million square miles), making it the largest hot desert in the world and the third-largest desert overall.",
+        "in": 1335,
+        "out": 43,
+        "cost": 0.0015500000000000002,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.71,
+        "seconds": 3.26,
+        "api_seconds": 0.95,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Sahara covers **9.2 million square kilometres** (3,600,000 square miles), making it the largest hot desert in the world and the third-largest desert overall.",
+        "in": 1514,
+        "out": 44,
+        "cost": 0.0017339999999999999,
+        "calls": 1,
+        "seconds": 2.82,
+        "api_seconds": 1.02,
+        "correct": true
+      }
+    },
+    {
+      "q": "Who popularized the term \"Silk Road\"?",
+      "type": "fact",
+      "expect": [
+        "Richthofen"
+      ],
+      "grape": {
+        "answer": "Ferdinand von Richthofen popularized the term \"Silk Road\" in 1877, deriving it from the German term Seidenstraße, though the term itself had been in use in decades prior to that.",
+        "in": 1236,
+        "out": 52,
+        "cost": 0.001496,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.24,
+        "api_seconds": 1.05,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, the term \"Silk Road\" was first popularized in 1877 by Ferdinand von Richthofen, a German geographer who made seven expeditions to China from 1868 to 1872. However, the term did not gain widespread acceptance in academia or popularity among the public until the 20th century.",
+        "in": 1410,
+        "out": 78,
+        "cost": 0.0018,
+        "calls": 1,
+        "seconds": 2.96,
+        "api_seconds": 1.21,
+        "correct": true
+      }
+    },
+    {
+      "q": "According to Chinese legend, who first discovered tea?",
+      "type": "paraphrase",
+      "expect": [
+        "Shennong"
+      ],
+      "grape": {
+        "answer": "According to Chinese legend, the mythical **Shennong** first discovered tea in 2737 BC, although evidence suggests that tea drinking may have been introduced from southwest China.",
+        "in": 1351,
+        "out": 41,
+        "cost": 0.001556,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.71,
+        "seconds": 3.23,
+        "api_seconds": 1.08,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to Chinese legend, the mythical **Shennong** first discovered tea in 2737 BC, although evidence suggests that tea drinking may have been introduced from southwest China.",
+        "in": 1685,
+        "out": 41,
+        "cost": 0.0018900000000000002,
+        "calls": 1,
+        "seconds": 3.27,
+        "api_seconds": 1.15,
+        "correct": true
+      }
+    },
+    {
+      "q": "In what year was the first direct image of a black hole published?",
+      "type": "number",
+      "expect": [
+        "2019"
+      ],
+      "grape": {
+        "answer": "The first direct image of a black hole was published in **2019**. Specifically, on April 10, 2019, the Event Horizon Telescope captured and released the first direct image of a black hole and its vicinity, showing the supermassive black hole at the center of the galaxy Messier 87.",
+        "in": 1178,
+        "out": 72,
+        "cost": 0.001538,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.89,
+        "seconds": 3.46,
+        "api_seconds": 1.24,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The first direct image of a black hole was published in **2019**. According to the excerpts, \"On 10 April 2019, the first direct image of a black hole and its vicinity was published, following observations made by the Event Horizon Telescope (EHT) of the supermassive black hole in Messier 87's galactic centre.\"",
+        "in": 1427,
+        "out": 83,
+        "cost": 0.001842,
+        "calls": 1,
+        "seconds": 3.09,
+        "api_seconds": 1.31,
+        "correct": true
+      }
+    },
+    {
+      "q": "What is the boundary around a black hole beyond which nothing can get out called?",
+      "type": "paraphrase",
+      "expect": [
+        "event horizon"
+      ],
+      "grape": {
+        "answer": "The boundary around a black hole beyond which nothing can escape is called the **event horizon**. According to the excerpts, it is \"a boundary in spacetime through which matter and light can pass only inward towards the centre of the black hole,\" and nothing, not even light, can escape from inside it.",
+        "in": 1139,
+        "out": 67,
+        "cost": 0.001474,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.54,
+        "seconds": 3.76,
+        "api_seconds": 1.44,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The boundary around a black hole beyond which nothing can get out is called the **event horizon**. According to the excerpts, it is \"a boundary in spacetime through which matter and light can pass only inward towards the centre of the black hole,\" and \"nothing, not even light, can escape from inside the event horizon.\"",
+        "in": 1127,
+        "out": 71,
+        "cost": 0.001482,
+        "calls": 1,
+        "seconds": 3.17,
+        "api_seconds": 1.31,
+        "correct": true
+      }
+    },
+    {
+      "q": "How many Nobel Prizes did Marie Curie win, and in which fields?",
+      "type": "number",
+      "expect": [
+        [
+          "two",
+          "2"
+        ],
+        "Physics",
+        "Chemistry"
+      ],
+      "grape": {
+        "answer": "Marie Curie won two Nobel Prizes: the 1903 Nobel Prize in Physics (shared with her husband Pierre for their research on radioactivity) and the 1911 Nobel Prize in Chemistry (for the discovery of radium and polonium).",
+        "in": 1157,
+        "out": 57,
+        "cost": 0.0014420000000000001,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.91,
+        "seconds": 3.69,
+        "api_seconds": 1.27,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Marie Curie won two Nobel Prizes: the Nobel Prize in Physics in 1903 (shared with Pierre Curie and Henri Becquerel) and the Nobel Prize in Chemistry in 1911 (for the discovery of radium and polonium).",
+        "in": 1406,
+        "out": 59,
+        "cost": 0.0017009999999999998,
+        "calls": 1,
+        "seconds": 2.93,
+        "api_seconds": 1.14,
+        "correct": true
+      }
+    },
+    {
+      "q": "What illness killed Marie Curie?",
+      "type": "paraphrase",
+      "expect": [
+        "aplastic"
+      ],
+      "grape": {
+        "answer": "Marie Curie died in 1934 of aplastic anaemia, likely caused by exposure to radiation during her scientific research and radiological work at field hospitals during the First World War.",
+        "in": 1324,
+        "out": 42,
+        "cost": 0.001534,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.72,
+        "seconds": 3.09,
+        "api_seconds": 0.95,
+        "correct": true
+      },
+      "rag": {
+        "answer": "According to the excerpts, Marie Curie died from **aplastic anaemia** on July 4, 1934, which is believed to have been contracted from her long-term exposure to radiation that caused damage to her bone marrow.",
+        "in": 1294,
+        "out": 54,
+        "cost": 0.001564,
+        "calls": 1,
+        "seconds": 2.85,
+        "api_seconds": 1.07,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which ocean does the Amazon empty into?",
+      "type": "paraphrase",
+      "expect": [
+        "Atlantic"
+      ],
+      "grape": {
+        "answer": "The Amazon River empties into the Atlantic Ocean, discharging approximately 209,000 cubic meters of water per second on average and representing about 20% of the Earth's fresh water entering the ocean.",
+        "in": 1634,
+        "out": 56,
+        "cost": 0.001914,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.34,
+        "searched": [
+          [
+            "Amazon River ocean Atlantic"
+          ]
+        ],
+        "seconds": 6.16,
+        "api_seconds": 1.83,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Amazon empties into the Atlantic Ocean, releasing up to 300,000 m³/s of water during the rainy season and accounting for about 20% of the Earth's fresh water entering the ocean.",
+        "in": 1610,
+        "out": 48,
+        "cost": 0.00185,
+        "calls": 1,
+        "seconds": 3.51,
+        "api_seconds": 1.73,
+        "correct": true
+      }
+    },
+    {
+      "q": "What was the last major armed revolt by former samurai?",
+      "type": "fact",
+      "expect": [
+        "Satsuma"
+      ],
+      "grape": {
+        "answer": "The Satsuma Rebellion of 1877, led by Saigō Takamori, was the largest and last major armed revolt by former samurai. Its defeat confirmed the military and political authority of the central government.",
+        "in": 1256,
+        "out": 52,
+        "cost": 0.001516,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.32,
+        "api_seconds": 1.06,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Satsuma Rebellion of 1877, led by Saigō Takamori, was the last major armed revolt by former samurai. Its defeat confirmed the military and political authority of the central government and marked the end of large-scale armed resistance by disaffected samurai.",
+        "in": 1479,
+        "out": 66,
+        "cost": 0.001809,
+        "calls": 1,
+        "seconds": 2.94,
+        "api_seconds": 1.2,
+        "correct": true
+      }
+    },
+    {
+      "q": "Besides swordsmanship, which martial skills were a samurai's main training?",
+      "type": "paraphrase",
+      "expect": [
+        "archery",
+        "horse"
+      ],
+      "grape": {
+        "answer": "Besides swordsmanship, the samurai's main martial training focused on **archery and horsemanship**, which were the primary martial skills taught alongside swordsmanship from a young age through private instruction.",
+        "in": 1242,
+        "out": 49,
+        "cost": 0.001487,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.72,
+        "seconds": 3.45,
+        "api_seconds": 1.12,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Besides swordsmanship, the samurai's main training included **archery and horsemanship**, which were described as \"the primary martial skills\" alongside swordsmanship. Additionally, samurai studied literature, calligraphy, and Confucian philosophy as part of their comprehensive training.",
+        "in": 1311,
+        "out": 68,
+        "cost": 0.0016510000000000001,
+        "calls": 1,
+        "seconds": 2.87,
+        "api_seconds": 1.22,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which plant are tea leaves harvested from?",
+      "type": "paraphrase",
+      "expect": [
+        "Camellia"
+      ],
+      "grape": {
+        "answer": "Tea leaves are harvested from the **Camellia sinensis**, an evergreen shrub native to East Asia that originated in the borderlands of southwestern China, northeast India, and northern Myanmar. The plant is cultivated and pruned to waist height for easier harvesting of its tender leaves and shoots.",
+        "in": 1241,
+        "out": 67,
+        "cost": 0.001576,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 1.0,
+        "seconds": 3.44,
+        "api_seconds": 1.33,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Tea leaves are harvested from **Camellia sinensis**, an evergreen plant that grows mainly in tropical and subtropical climates. The plant is cultivated in various regions worldwide, including Asia, Africa, and smaller areas in South America and around the Black and Caspian Seas.",
+        "in": 1390,
+        "out": 64,
+        "cost": 0.00171,
+        "calls": 1,
+        "seconds": 3.13,
+        "api_seconds": 1.38,
+        "correct": true
+      }
+    },
+    {
+      "q": "Which came first: Marie Curie's birth or the completion of the Eiffel Tower? Give both years.",
+      "type": "cross",
+      "expect": [
+        "1867",
+        "1889"
+      ],
+      "grape": {
+        "answer": "Marie Curie's birth came first in 1867, followed by the completion of the Eiffel Tower in 1889.",
+        "in": 1679,
+        "out": 60,
+        "cost": 0.001979,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.32,
+        "searched": [
+          [
+            "When was Marie Curie born?",
+            "When was the Eiffel Tower completed?"
+          ]
+        ],
+        "seconds": 6.73,
+        "api_seconds": 1.76,
+        "correct": true
+      },
+      "rag": {
+        "answer": "The Eiffel Tower's completion came first: the main structural work was completed at the end of March 1889, while Marie Curie was born on 7 November 1867.",
+        "in": 1593,
+        "out": 45,
+        "cost": 0.001818,
+        "calls": 1,
+        "seconds": 2.88,
+        "api_seconds": 1.15,
+        "correct": true
+      }
+    },
+    {
+      "q": "In which years did Gutenberg invent the printing press and the first modern Olympics take place?",
+      "type": "cross",
+      "expect": [
+        "1440",
+        "1896"
+      ],
+      "grape": {
+        "answer": "According to the excerpts, Johannes Gutenberg invented the printing press around 1440, and the first modern Olympics took place in Athens in 1896.",
+        "in": 2260,
+        "out": 50,
+        "cost": 0.00251,
+        "calls": 2,
+        "route": "answer-search",
+        "coverage": 0.57,
+        "searched": [
+          [
+            "In which years did Gutenberg invent the printing press and the first modern Olympics take place?",
+            "when did the first modern Olympics take place"
+          ]
+        ],
+        "seconds": 6.63,
+        "api_seconds": 2.02,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Based on the excerpts provided, Gutenberg invented the printing press around 1440. However, the excerpts do not contain information about when the first modern Olympics took place.",
+        "in": 1349,
+        "out": 40,
+        "cost": 0.001549,
+        "calls": 1,
+        "seconds": 2.66,
+        "api_seconds": 0.94,
+        "correct": false
+      }
+    },
+    {
+      "q": "ऑक्टोपस के कितने दिल होते हैं?",
+      "type": "multilingual",
+      "expect": [
+        [
+          "3",
+          "३",
+          "तीन",
+          "three"
+        ]
+      ],
+      "grape": {
+        "answer": "ऑक्टोपस के **तीन दिल** होते हैं - एक मुख्य (systemic) दिल जो पूरे शरीर में रक्त को प्रसारित करता है और दो क्लोम (branchial) दिल जो दोनों क्लोम के माध्यम से रक्त को पंप करते हैं।",
+        "in": 1991,
+        "out": 127,
+        "cost": 0.002626,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Octopus hearts how many"
+          ]
+        ],
+        "seconds": 6.52,
+        "api_seconds": 2.41,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 821,
+        "out": 8,
+        "cost": 0.000861,
+        "calls": 1,
+        "seconds": 2.53,
+        "api_seconds": 0.72,
+        "correct": false
+      }
+    },
+    {
+      "q": "¿Quién inventó la imprenta?",
+      "type": "multilingual",
+      "expect": [
+        "Gutenberg"
+      ],
+      "grape": {
+        "answer": "Según los extractos, la imprenta fue inventada por Johannes Gutenberg, el orfebre alemán, alrededor de 1440, utilizando cuatro tecnologías existentes: la prensa de tornillo, los tipos móviles, el formato del códice y la producción mecanizada de papel.",
+        "in": 1520,
+        "out": 87,
+        "cost": 0.001955,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.0,
+        "searched": [
+          [
+            "Who invented the printing press?"
+          ]
+        ],
+        "seconds": 6.63,
+        "api_seconds": 2.09,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 671,
+        "out": 8,
+        "cost": 0.000711,
+        "calls": 1,
+        "seconds": 3.09,
+        "api_seconds": 1.33,
+        "correct": false
+      }
+    },
+    {
+      "q": "Quelle est la hauteur de la tour Eiffel ?",
+      "type": "multilingual",
+      "expect": [
+        "330"
+      ],
+      "grape": {
+        "answer": "La tour Eiffel mesure 330 mètres (1 083 pieds) de hauteur, ce qui en fait la structure la plus haute de Paris. Cette hauteur a augmenté au fil du temps en raison de l'ajout d'antennes de diffusion, notamment une antenne ajoutée en 1957 qui a augmenté la hauteur de 18,7 m et des travaux en 2000 qui ont ajouté 5,3 m supplémentaires.",
+        "in": 1713,
+        "out": 138,
+        "cost": 0.002403,
+        "calls": 2,
+        "route": "route-search",
+        "coverage": 0.33,
+        "searched": [
+          [
+            "What is the height of the Eiffel Tower?"
+          ]
+        ],
+        "seconds": 6.81,
+        "api_seconds": 2.47,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nLes extraits fournis ne contiennent pas la hauteur totale de la tour Eiffel, bien qu'ils mentionnent que la plateforme supérieure du troisième niveau se trouve à 276 m (906 ft) au-dessus du sol.",
+        "in": 1331,
+        "out": 71,
+        "cost": 0.001686,
+        "calls": 1,
+        "seconds": 3.21,
+        "api_seconds": 1.38,
+        "correct": false
+      }
+    },
+    {
+      "q": "What is the capital of Australia?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 0,
+        "out": 0,
+        "cost": 0,
+        "calls": 0,
+        "route": "refused",
+        "coverage": 0.0,
+        "seconds": 0.31,
+        "api_seconds": 0.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided contain information about the Amazon River and the Sahara Desert, but do not include any information about the capital of Australia.",
+        "in": 1235,
+        "out": 38,
+        "cost": 0.001425,
+        "calls": 1,
+        "seconds": 3.02,
+        "api_seconds": 1.01,
+        "correct": true
+      }
+    },
+    {
+      "q": "How do I bake chocolate chip cookies?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 0,
+        "out": 0,
+        "cost": 0,
+        "calls": 0,
+        "route": "refused",
+        "coverage": 0.0,
+        "seconds": 0.07,
+        "api_seconds": 0.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided contain information about tea preparation, printing presses, and Olympic Games, but do not include any information about baking chocolate chip cookies.",
+        "in": 1090,
+        "out": 40,
+        "cost": 0.0012900000000000001,
+        "calls": 1,
+        "seconds": 3.09,
+        "api_seconds": 1.3,
+        "correct": true
+      }
+    },
+    {
+      "q": "What was the score of yesterday's football match?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 0,
+        "out": 0,
+        "cost": 0,
+        "calls": 0,
+        "route": "refused",
+        "coverage": 0.0,
+        "seconds": 0.3,
+        "api_seconds": 0.0,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 515,
+        "out": 8,
+        "cost": 0.000555,
+        "calls": 1,
+        "seconds": 2.45,
+        "api_seconds": 0.71,
+        "correct": true
+      }
+    },
+    {
+      "q": "What was Marie Curie's favourite pizza?",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.",
+        "in": 518,
+        "out": 5,
+        "cost": 0.000543,
+        "calls": 1,
+        "route": "route-none",
+        "coverage": 0.16,
+        "seconds": 2.95,
+        "api_seconds": 0.69,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.",
+        "in": 1691,
+        "out": 8,
+        "cost": 0.001731,
+        "calls": 1,
+        "seconds": 2.57,
+        "api_seconds": 0.76,
+        "correct": true
+      }
+    },
+    {
+      "q": "Write a poem about the ocean.",
+      "type": "out_of_scope",
+      "expect": "NOT FOUND",
+      "grape": {
+        "answer": "Not in the documents.\n\nThe excerpts provided discuss poems about historical monuments and events (the Eiffel Tower, Olympic Games revival, samurai death poems), and information about the Amazon River's discharge into the ocean, but they do not contain a poem about the ocean itself that I could use to answer your request.",
+        "in": 1214,
+        "out": 69,
+        "cost": 0.001559,
+        "calls": 1,
+        "route": "direct",
+        "coverage": 0.5,
+        "seconds": 3.86,
+        "api_seconds": 1.61,
+        "correct": true
+      },
+      "rag": {
+        "answer": "Not in the documents.\n\nThe excerpts provided contain information about octopuses, the Amazon River, and the Sahara, but they do not include any content that could be used to write a poem about the ocean in general.",
+        "in": 1209,
+        "out": 51,
+        "cost": 0.001464,
+        "calls": 1,
+        "seconds": 2.96,
+        "api_seconds": 1.18,
+        "correct": true
+      }
+    }
+  ]
+}

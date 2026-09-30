@@ -1,0 +1,212 @@
+[
+ {
+  "type": "fact",
+  "q": "Which river is the German town of Aalen situated on?",
+  "expect": [
+   "Kocher"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "What was the Acorn Electron nicknamed inside Acorn?",
+  "expect": [
+   "Elk"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "What was the launch price of the Acorn Electron?",
+  "expect": [
+   "199"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "How many times did the Apollo 8 crew orbit the Moon?",
+  "expect": [
+   [
+    "ten",
+    "10"
+   ]
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "Who were the three astronauts of Apollo 8?",
+  "expect": [
+   "Borman",
+   "Lovell",
+   "Anders"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "In what year did the Boeing 767 prototype first fly?",
+  "expect": [
+   "1981"
+  ]
+ },
+ {
+  "type": "paraphrase",
+  "q": "Which Boeing airliner was the company's first wide-body jet with only two engines?",
+  "expect": [
+   "767"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "What is the official estimate of the Ainu population of Japan?",
+  "expect": [
+   [
+    "25,000",
+    "25000"
+   ]
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "In which Mexican state is Acapulco?",
+  "expect": [
+   "Guerrero"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "How many KNVB Cups has AFC Ajax won?",
+  "expect": [
+   [
+    "20",
+    "twenty"
+   ]
+  ]
+ },
+ {
+  "type": "paraphrase",
+  "q": "Who was the city of Ann Arbor named after?",
+  "expect": [
+   [
+    "wives",
+    "wife"
+   ]
+  ]
+ },
+ {
+  "type": "number",
+  "q": "What population did the 2020 census record for Ann Arbor?",
+  "expect": [
+   [
+    "123,851",
+    "123851"
+   ]
+  ]
+ },
+ {
+  "type": "number",
+  "q": "In what year was Antoine Lavoisier guillotined?",
+  "expect": [
+   "1794"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "Which element did Lavoisier predict would exist, in 1787?",
+  "expect": [
+   "silicon"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "Who developed the process that makes ammonia from nitrogen in the air?",
+  "expect": [
+   "Haber",
+   "Bosch"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "What share of industrially produced ammonia goes into fertilisers?",
+  "expect": [
+   "70"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "What is the capital of Brunei?",
+  "expect": [
+   "Bandar Seri Begawan"
+  ]
+ },
+ {
+  "type": "paraphrase",
+  "q": "What is the name of the animal boundary Alfred Russel Wallace found in the Malay Archipelago?",
+  "expect": [
+   "Wallace Line"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "At which battle did Alfred the Great defeat the Vikings in 878?",
+  "expect": [
+   "Edington"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "What is the largest city in Andhra Pradesh?",
+  "expect": [
+   "Visakhapatnam"
+  ]
+ },
+ {
+  "type": "fact",
+  "q": "Which earlier online service does AOL trace its history to?",
+  "expect": [
+   "PlayNET"
+  ]
+ },
+ {
+  "type": "number",
+  "q": "Which atomic numbers does the actinide series span?",
+  "expect": [
+   "89",
+   "102"
+  ]
+ },
+ {
+  "type": "cross",
+  "q": "Who lived longer, Antoine Lavoisier or Alfred Russel Wallace?",
+  "expect": [
+   "Wallace"
+  ]
+ },
+ {
+  "type": "out_of_scope",
+  "q": "What will the weather be in London tomorrow?",
+  "none": true
+ },
+ {
+  "type": "out_of_scope",
+  "q": "Write a haiku about autumn.",
+  "none": true
+ },
+ {
+  "type": "out_of_scope",
+  "q": "Translate 'good morning' into German.",
+  "none": true
+ },
+ {
+  "type": "out_of_scope",
+  "q": "What is 144 divided by 12?",
+  "none": true
+ },
+ {
+  "type": "out_of_scope",
+  "q": "How do I install Python on Windows?",
+  "none": true
+ },
+ {
+  "type": "out_of_scope",
+  "q": "Who won the 2018 Wimbledon men's singles final?",
+  "none": true
+ }
+]
