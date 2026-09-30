@@ -26,7 +26,7 @@ jobs:
       - run: python report.py
         env:
           # Top-bar links; set these as repository variables to change them.
-          BENCH_GRAPE_URL: ${{ vars.BENCH_GRAPE_URL || 'GRAPE_URL' }}
+          BENCH_GRAPE_URL: ${{ vars.BENCH_GRAPE_URL || 'https://grape-industries.vercel.app' }}
           BENCH_SOURCE_URL: ${{ vars.BENCH_SOURCE_URL || 'https://github.com/grape-industries/grape-bench' }}
       - uses: actions/upload-pages-artifact@v3
         with:

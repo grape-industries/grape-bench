@@ -15,7 +15,7 @@ ROOT = pathlib.Path(__file__).parent
 RESULTS, SITE = ROOT / "results", ROOT / "site"
 # Top-bar links; CI or a fork can point them elsewhere.
 REPO = os.environ.get("BENCH_SOURCE_URL", "https://github.com/grape-industries/grape-bench")
-GRAPE_URL = os.environ.get("BENCH_GRAPE_URL", "GRAPE_URL")
+GRAPE_URL = os.environ.get("BENCH_GRAPE_URL", "https://grape-industries.vercel.app")
 NOT_FOUND = "NOT FOUND"
 
 # Suites in page order: (corpus, question file, RAG embedder) -> title, what it tests.
