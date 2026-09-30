@@ -2,7 +2,6 @@
 
 import argparse
 import hashlib
-import io
 import json
 import os
 import pathlib
@@ -11,7 +10,6 @@ import shutil
 import statistics
 import subprocess
 import sys
-import tarfile
 import time
 
 import httpx
@@ -76,23 +74,24 @@ NONE_PHRASES = ["not in the documents", "don't know", "do not know", "no informa
 ROOT = pathlib.Path(__file__).parent
 QUESTION_DIR = ROOT / "questions"
 RESULTS = ROOT / "results"
-GRAPE = os.environ.get("GRAPE_URL", "http://localhost:8080/grape").rstrip("/")
 http = httpx.Client(timeout=180)
 
 
+def project_url(corpus):
+    """The grape project holding this corpus, e.g. https://grape-industries.vercel.app/grape/<id>.
+    GRAPE_PROJECT_URL_<CORPUS> (for scripts that use several corpora) wins over GRAPE_PROJECT_URL."""
+    url = os.environ.get(f"GRAPE_PROJECT_URL_{corpus.upper()}") or os.environ.get("GRAPE_PROJECT_URL")
+    if not url:
+        sys.exit(f"Set GRAPE_PROJECT_URL to the grape project that holds corpus/{corpus}/ (see README).")
+    return url.rstrip("/")
+
+
 def grape_session():
-    """grape needs a signed-in user: log in (or sign up once) and send the token on every call."""
-    base = GRAPE.rsplit("/grape", 1)[0]
-    local = re.match(r"https?://(localhost|127\.)", base)
-    if not local and not os.environ.get("GRAPE_PASSWORD"):
-        sys.exit("Set GRAPE_EMAIL and GRAPE_PASSWORD for a grape server that is not on this machine.")
-    email = os.environ.get("GRAPE_EMAIL", "bench@grape.local")
-    password = os.environ.get("GRAPE_PASSWORD", "grape-bench-local")
-    r = http.post(f"{base}/auth/login", json={"email": email, "password": password})
-    if r.status_code == 401:
-        r = http.post(f"{base}/auth/signup", json={"email": email, "password": password})
-    r.raise_for_status()
-    http.headers["Authorization"] = f"Bearer {r.json()['token']}"
+    """grape's search-only API key (starts with grape_), sent on every call."""
+    key = os.environ.get("GRAPE_KEY")
+    if not key:
+        sys.exit("Set GRAPE_KEY to your search-only API key from the grape app (see README).")
+    http.headers["Authorization"] = f"Bearer {key}"
 
 
 class ClaudeCLI:
@@ -174,26 +173,6 @@ class LLM:
 
 # ---------- setup ----------
 
-def setup_grape(corpus, cache):
-    id_file = cache / "grape_id"
-    if id_file.exists():
-        gid = id_file.read_text().strip()
-        if http.get(f"{GRAPE}/{gid}/metadata").status_code == 200:
-            return gid, json.loads((cache / "grape_setup.json").read_text())["seconds"]
-    buf = io.BytesIO()
-    with tarfile.open(fileobj=buf, mode="w:gz") as tar:
-        for f in sorted(corpus.glob("*.txt")):
-            tar.add(f, arcname=f.name)
-    t = time.perf_counter()
-    r = http.post(f"{GRAPE}/projects", content=buf.getvalue(), headers={"Content-Type": "application/gzip"})
-    r.raise_for_status()
-    secs = time.perf_counter() - t
-    gid = r.json()["id"]
-    id_file.write_text(gid)
-    (cache / "grape_setup.json").write_text(json.dumps({"seconds": secs}))
-    return gid, secs
-
-
 def chunk_corpus(corpus):
     chunks = []
     for f in sorted(corpus.glob("*.txt")):
@@ -269,10 +248,10 @@ NONE                       if the question cannot be answered from these documen
 
 
 class Grape:
-    def __init__(self, gid):
-        self.gid = gid
-        files = http.get(f"{GRAPE}/{gid}/metadata").json().get("files", {})
-        self.titles = "\n".join(f"- {f['title']}" for f in list(files.values())[:60])
+    def __init__(self, url, corpus):
+        self.url = url
+        # The same titles grape's brief uses: file name without extension, underscores as spaces.
+        self.titles = "\n".join(f"- {f.stem.replace('_', ' ')}" for f in sorted(corpus.glob("*.txt"))[:60])
 
     def search(self, queries):
         """grape picks terms from free text, ranks paragraphs (BM25 + brief), returns snippets + coverage.
@@ -284,7 +263,7 @@ class Grape:
         else:
             body = {"limit": LIMIT, "snippet": SNIPPET, "rerank": False}
         body |= {"query": queries[0]} if len(queries) == 1 else {"queries": queries}
-        r = http.post(f"{GRAPE}/{self.gid}/search", json=body)
+        r = http.post(f"{self.url}/search", json=body)
         r.raise_for_status()
         d = r.json()
         self.refused = bool(d.get("refused"))
@@ -300,7 +279,7 @@ class Grape:
         if not gate or not english_like(q):
             return False
         body = {"query": q, "limit": CANDIDATES, "cutoff": 0, "snippet": SNIPPET}
-        d = http.post(f"{GRAPE}/{self.gid}/search", json=body).json()
+        d = http.post(f"{self.url}/search", json=body).json()
         if d["coverage"] >= gate["cov"]:
             return False
         texts = [h["text"] for h in d["hits"]]
@@ -493,12 +472,8 @@ def main():
 
     setup = {}
     if "grape" in modes:
-        gid, setup["grape"] = setup_grape(corpus, cache)
-        t = time.perf_counter()
-        http.post(f"{GRAPE}/{gid}/index").raise_for_status()
-        setup["grape_update"] = time.perf_counter() - t
-        grape = Grape(gid)
-        print(f"grape project {gid}, indexed in {setup['grape']:.2f}s")
+        grape = Grape(project_url(args.corpus), corpus)
+        print(f"grape project {grape.url}")
     if "rag" in modes:
         # Each non-default model keeps its own vectors next to the corpus's default ones.
         vec_cache = cache if embed == CORPUS_EMBED.get(args.corpus, "bge-small") else cache / embed
@@ -541,7 +516,7 @@ def main():
         "settings": {"limit": LIMIT, "snippet": SNIPPET, "top_k": TOP_K, "chunk_chars": CHUNK_CHARS},
         "thinking": args.provider != "claude" or not args.no_thinking,
         "rerank": args.rerank, "gate": args.gate, "server_rerank": args.server_rerank, "server_limit": args.server_limit, "judge": not args.no_judge,
-        "grape_version": grape_version(),
+        "grape_version": grape_version(grape.url) if "grape" in modes else None,
         "bench_commit": bench_commit(),
     }
     out.write_text(json.dumps({
@@ -555,9 +530,9 @@ def main():
     print(f"Report: {report.build()}")
 
 
-def grape_version():
+def grape_version(url):
     try:
-        return http.get(GRAPE.rsplit("/grape", 1)[0] + "/health").json().get("version")
+        return http.get(url.rsplit("/grape/", 1)[0] + "/health").json().get("version")
     except (httpx.HTTPError, ValueError):
         return None
 

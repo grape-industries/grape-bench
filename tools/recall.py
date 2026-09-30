@@ -2,8 +2,8 @@
 
 Compares grape (keyword/BM25 + brief) and vector search, each with and without a cross-encoder
 reranker over its top-20 candidates. Unanswerable questions show whether the top reranker score
-can tell "not in the documents" apart. Run `uv run fetch_squad.py` first.
-Usage: uv run recall.py [n_answerable] [n_unanswerable] [n_jina]
+can tell "not in the documents" apart. Run `uv run tools/fetch_squad.py` first.
+Usage: uv run tools/recall.py [n_answerable] [n_unanswerable] [n_jina]
 """
 
 import pathlib
@@ -33,13 +33,11 @@ rng = random.Random(0)
 sample = rng.sample([q for q in qs if not q["impossible"]], N_ANS) + rng.sample([q for q in qs if q["impossible"]], N_IMP)
 paras = [(f.name, i, t) for f in sorted(corpus.glob("*.txt")) for i, t in enumerate(f.read_text().splitlines(), 1)]
 
-# grape: project per corpus, reindexed so the brief is current
-gid, _ = bench.setup_grape(corpus, cache)
-bench.http.post(f"{bench.GRAPE}/{gid}/index").raise_for_status()
+project = bench.project_url("squad")
 
 
 def grape_cands(q):
-    r = bench.http.post(f"{bench.GRAPE}/{gid}/search", json={"query": q, "limit": CANDS, "cutoff": 0})
+    r = bench.http.post(f"{project}/search", json={"query": q, "limit": CANDS, "cutoff": 0})
     r.raise_for_status()
     return [(h["path"], h["line"], h["text"]) for h in r.json()["hits"]]
 

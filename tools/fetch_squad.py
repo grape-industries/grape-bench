@@ -2,7 +2,7 @@
 
 Each question keeps its gold paragraph (file + line), so retrieval can be checked exactly,
 and SQuAD v2's unanswerable questions test the "not in the documents" case.
-Usage: uv run fetch_squad.py [n_articles]
+Usage: uv run tools/fetch_squad.py [n_articles]
 """
 
 import json

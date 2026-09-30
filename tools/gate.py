@@ -4,7 +4,8 @@ A gate rule rejects a question when every chosen signal is below its threshold. 
 rule that rejects the most out-of-scope questions while rejecting zero in-scope ones.
 Questions with no English function words (e.g. Spanish, Hindi) are never gated: the rerankers
 here can't judge them, and grape's route call handles them.
-Usage: uv run gate.py
+Needs one grape project per corpus: GRAPE_PROJECT_URL_SPACE, _MIXED, _FRESH and _SQUAD.
+Usage: uv run tools/gate.py
 """
 
 import pathlib
@@ -27,9 +28,9 @@ MAX_SQUAD_REJECT = 0.01  # at most 1% of answerable SQuAD questions may be wrong
 english_like = bench.english_like
 
 
-def grape_cands(gid, q):
+def grape_cands(project, q):
     body = {"query": q, "limit": bench.CANDIDATES, "cutoff": 0, "snippet": bench.SNIPPET}
-    r = bench.http.post(f"{bench.GRAPE}/{gid}/search", json=body)
+    r = bench.http.post(f"{project}/search", json=body)
     r.raise_for_status()
     d = r.json()
     return d["coverage"], [h["text"] for h in d["hits"]]
@@ -55,9 +56,9 @@ if score_file.exists():
 else:
     rows = []  # one per question: label "in" (must never be rejected) or "out" (should be rejected)
     for corpus, qfile in SETS:
-        gid = bench.setup_grape(bench.ROOT / "corpus" / corpus, bench.ROOT / "cache" / corpus)[0]
+        project = bench.project_url(corpus)
         for item in json.loads((bench.QUESTION_DIR / qfile).read_text()):
-            cov, texts = grape_cands(gid, item["q"])
+            cov, texts = grape_cands(project, item["q"])
             rows.append({
                 "set": corpus, "q": item["q"], "label": "out" if item.get("none") else "in", "en": english_like(item["q"]),
                 "cov": cov, "minilm": top_score("minilm", item["q"], texts), "jina": top_score("jina", item["q"], texts),
@@ -67,10 +68,10 @@ else:
     squad = json.loads((bench.QUESTION_DIR / "squad_questions.json").read_text())
     rng = random.Random(0)
     sq = rng.sample([q for q in squad if not q["impossible"]], SQUAD_ANS) + rng.sample([q for q in squad if q["impossible"]], SQUAD_IMP)
-    sgid = bench.setup_grape(bench.ROOT / "corpus" / "squad", bench.ROOT / "cache" / "squad")[0]
+    squad_project = bench.project_url("squad")
     squad_rows = []
     for item in sq:
-        cov, texts = grape_cands(sgid, item["q"])
+        cov, texts = grape_cands(squad_project, item["q"])
         squad_rows.append({"cov": cov, "minilm": top_score("minilm", item["q"], texts), "impossible": item["impossible"],
                            "en": english_like(item["q"])})
     print("  scored squad\n")
